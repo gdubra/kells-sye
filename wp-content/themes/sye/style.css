@@ -10,6 +10,25 @@
 
 @import url("../twentythirteen/style.css");
 
+@font-face {
+    font-family: "Abel";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Abel"), local("Abel-Regular"), url("http://themes.googleusercontent.com/static/fonts/abel/v3/EAqh528fFdbUek8UOky4sA.woff") format("woff");
+}
+@font-face {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Montserrat-Regular"), url("http://themes.googleusercontent.com/static/fonts/montserrat/v3/zhcz-_WihjSQC0oHJ9TCYBsxEYwM7FgeyaSgU71cLG0.woff") format("woff");
+}
+@font-face {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 700;
+    src: local("Montserrat-Bold"), url("http://themes.googleusercontent.com/static/fonts/montserrat/v3/IQHow_FEYlDC4Gzy_m8fcgFhaRv2pGgT5Kf0An0s4MM.woff") format("woff");
+}
+
 /* generales */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {margin:0;padding:0;border:0;outline:0;font-style:inherit;font-size:100%;font-family:inherit;vertical-align:baseline;}
 body {background:#fff url(images/fondo.gif) center repeat-y;margin:0;padding:0;}
@@ -208,24 +227,24 @@ h2 {font-family:'Roboto',sans-serif;font-size:20px;font-weight:bold;color:#6f6f6
 .aplicacion-descarga img {margin-top:15px;}
 
 /* encabezado */
-.encabezado-barra {float:left;width:100%;background:#f6f6f6;height:44px;border-bottom:1px solid #d7d7d7;display:table;}
+.encabezado-barra {display:inline-block;width:100%;background:#f6f6f6;height:44px;border-bottom:1px solid #d7d7d7;display:table;}
 .encabezado-barra-interno {width:960px;display:block;margin:0 auto;font-family:'Montserrat',sans-serif;font-size:11px;line-height:44px;text-transform:uppercase;}
-.encabezado-fecha {float:left;font-size:13px;color:#959595;}
+.encabezado-fecha {display:inline-block;font-size:13px;color:#959595;}
 .encabezado-contacto, .encabezado-idioma {float:right;border-right:1px solid #d7d7d7;border-left:1px solid #d7d7d7;}
 .encabezado-contacto a, .encabezado-idioma a {display:block;padding:0 20px;color:#5172b7;}
 .encabezado-contacto a:hover, .encabezado-idioma a:hover {background:#5172b7;color:#fff;}
 .encabezado-buscador {float:right;border-right:1px solid #d7d7d7;height:28px;padding:8px 20px; line-height:28px;}
 .encabezado-buscador input {border:1px solid #e5e5e5;background:#fff url(images/fondo-buscador.gif) 185px center no-repeat;padding:3px 30px 3px 5px;height:22px;line-height:22px;width:175px;font:12px Arial, Helvetica, sans-serif;color:#37b3af;font-weight:bold;}
 .encabezado-redes {float:right;border-right:1px solid #d7d7d7;padding:9px 15px 9px 20px;height:26px;}
-.encabezado-redes li {float:left;margin-right:5px;}
+.encabezado-redes li {display:inline-block;margin-right:5px;}
 .encabezado-redes li a {display:block;width:26px;height:26px;background:url(images/fondo-redes-sociales.gif) 0 0 no-repeat;}
 .encabezado-redes li.twitter a {background-position:-31px 0;}
 .encabezado-redes li.linkedin a {background-position:-62px 0;}
 .encabezado-redes li.youtube a {background-position:-93px 0;}
 .encabezado-idioma {border-left:none;}
-.encabezado {float:left;width:100%;background:url(images/fondo-encabezado.gif) center bottom no-repeat;height:146px;display:table;}
+.encabezado {display:inline-block;width:100%;background:url(images/fondo-encabezado.gif) center bottom no-repeat;height:146px;display:table;}
 .encabezado-interno {width:960px;display:block;margin:0 auto;}
-.encabezado-logo {float:left;padding:20px 30px;height:106px;}
+.encabezado-logo {display:inline-block;padding:20px 30px;height:106px;}
 .encabezado-logo > a {background:url(images/logo-seguridad-y-evaluacion-sistema-regional-de-evaluacion-de-impacto-en-politicas-de-seguridad-ciudadana.gif); width:483px; height:106px; display:block }
 .encabezado-logos {float:right;padding:53px 30px 53px 0;height:40px;}
 .encabezado-logos > .unvm_logo{ background:url(images/logo-unvm-universidad-nacional-de-villa-maria.gif); width:127px; height:42px; display: block; }
@@ -233,7 +252,7 @@ h2 {font-family:'Roboto',sans-serif;font-size:20px;font-weight:bold;color:#6f6f6
 
 
 /* menu */
-.menu {float:left;width:100%;display:table;}
+.menu {width:100%;}
 .menu-interno {width:960px;display:block;margin:0 auto;font-family:'Montserrat',sans-serif;font-size:13px;line-height:44px;text-transform:uppercase;}
 .menu ul {height:44px;list-style:none;margin:0;padding:0;border-radius: 0px 0px 5px 5px;-moz-border-radius:0px 0px 5px 5px;-webkit-border-radius:0px 0px 5px 5px;border:1px solid #a2a2a2;border-top:5px solid #a1a1a1;width:958px;}
 .menu li {float:left;padding:0px;}
