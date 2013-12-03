@@ -37,7 +37,7 @@ get_header(); ?>
 		                    <?php while ( have_posts() ) : the_post(); ?>
 			        	        <li>
 		                            <a href="<?php echo the_permalink() ?>">
-		                                <?php the_post_thumbnail('post-thumbnails'); ?>
+		                                <?php the_post_thumbnail('home-carrousel-thumb'); ?>
 		                                <p class="flex-caption"><span><?php echo the_time('d.m.Y')?></span><br /><?php echo the_title()?></p>
 		                            </a>
 		                        </li>
@@ -57,10 +57,10 @@ get_header(); ?>
 		                    	<div class="blog-nota-imagen">
 		                    		<div class="blog-nota-comentarios">
 		                    			<div class="blog-nota-comentarios-cantidad">
-		                    				<a href="<?php echo the_permalink() ?>"><?php comments_number(); ?> </a>
+		                    				<a href="<?php echo the_permalink() ?>"><?php comments_number(0,'%','%'); ?> </a>
 		                    			</div>
 		                    		</div>
-		                    		<a href="<?php echo the_permalink() ?>">
+		                    		<a href="<?php echo the_permalink('blog-novedades-home-thum') ?>">
 		                    			<?php the_post_thumbnail('blog-novedades-home-thum'); ?>
 		                    		</a>
 		                    	</div>
@@ -128,17 +128,7 @@ get_header(); ?>
 		                <div class="columna ancho-270 arriba-30"><a href="#"><img src="images/banner-aplicacion.jpg" width="270" height="144" alt="Aplicaci&oacute;n para celulares y tabletas - Pol&iacute;ticas e Intervenciones en Seguridad Ciudadana - Buscando y Evaluando Soluciones a los Problemas" title="Aplicaci&oacute;n para celulares y tabletas - Pol&iacute;ticas e Intervenciones en Seguridad Ciudadana - Buscando y Evaluando Soluciones a los Problemas" /></a></div>
 		            </div>
 		            
-		       	  	<div class="video">
-		            	<div class="video-arriba">
-		                	<div class="video-titulo">Video</div>
-		                    <div class="video-link"><a href="#">Ver m&aacute;s</a></div>
-		                </div>
-		                <div class="video-player">
-		                	<iframe src="//player.vimeo.com/video/61502693?title=0&amp;byline=0&amp;portrait=0&amp;color=37b3af" width="430" height="242" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-		                </div>
-		              <div class="video-texto">25.10.2013<br />
-		                <a href="#">Seminario Internacional sobre Pol&iacute;ticas P&uacute;blicas  de Seguridad.</a></div>
-		            </div>
+		       	  	<?php echo get_template_part('video');?>
 		            
 		        	<div class="autoridades">
 		            	<ul>

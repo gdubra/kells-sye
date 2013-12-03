@@ -3,8 +3,8 @@ add_action('after_setup_theme', 'wp_setup_theme_hook');
 function wp_setup_theme_hook() {
 	if(function_exists('add_theme_support')) {
 		add_theme_support( 'post-thumbnails' );
-		add_image_size( '', 630, 425, false);
-		add_image_size('blog-novedades-home-thum',260,195,false);
+		add_image_size( 'home-carrousel-thumb', 630, 425, true);
+		add_image_size('blog-novedades-home-thum',260,195,true);
 		
 	}
 	
@@ -31,6 +31,15 @@ function home_publicacion_recursos_query(){
 	return new WP_Query($args);
 }
 
+function home_video_query(){
+	$args = array(
+		   	'post_type' => 'video',
+		   	'orderby' => 'post_date',
+		   'order' => 'ASC'  
+	);
+	return new WP_Query($args);
+}
+
 
 
 /**
@@ -47,7 +56,7 @@ function create_post_type() {
 		'public' => true,
 		'has_archive' => true,
 		'taxonomies' => array('post_tag','category'),
-	    'supports' => array( 'title', 'editor', 'comments','tags', 'excerpt')
+	    'supports' => array( 'title', 'editor', 'comments','tags', 'excerpt','post-formats')
 		)
 	);
 	
@@ -76,6 +85,14 @@ function include_style($css_name){
 function include_script($js_name){
 	$uri = get_stylesheet_directory_uri(). '/js/'.$js_name.'.js';
 	echo "<script src=\"{$uri}\" type=\"text/javascript\"></script>";
+}
+
+function get_category_url($category_name){
+	return get_category_link(get_cat_ID($category_name));
+}
+
+function get_category_tag_url($category_name,$tag){
+	return get_category_link(get_cat_ID($category_name)).'?tag='.$tag;
 }
 // add_action( 'wp_enqueue_scripts', 'wptuts_scripts_basic' );
 ?>

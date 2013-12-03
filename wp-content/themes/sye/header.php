@@ -27,6 +27,7 @@
 	<!--[if lt IE 9]>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
 	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto+Condensed:400,700|Roboto:400,700,700italic">
 	<?php wp_head(); ?>
 </head>
 
