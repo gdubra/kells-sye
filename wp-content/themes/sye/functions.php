@@ -95,4 +95,27 @@ function get_category_tag_url($category_name,$tag){
 	return get_category_link(get_cat_ID($category_name)).'?tag='.$tag;
 }
 // add_action( 'wp_enqueue_scripts', 'wptuts_scripts_basic' );
+
+function contributors() {
+	global $wpdb;
+	$authors = $wpdb->get_results("SELECT ID, user_nicename from $wpdb->users WHERE display_name <> 'admin' ORDER BY display_name");
+	foreach($authors as $author) {
+		echo "<li><a href=\"".get_bloginfo('url')."/?author=";
+		echo $author->ID;
+		echo "\">";
+		echo get_avatar($author->ID, 61,the_author_meta('display_name', $author->ID));  
+		echo "<br /><span>";
+		echo get_the_author_meta("profesion", $author->ID);
+		echo "</span></a></li>";
+	}
+}
+	
+add_filter( 'user_contactmethods', 'perfil_usuario_personalizado' );
+function perfil_usuario_personalizado( $user_contact ) {
+    $user_contact['profesion'] = __('Profesion'); 
+    return $user_contact;
+	
+}
+
+
 ?>
