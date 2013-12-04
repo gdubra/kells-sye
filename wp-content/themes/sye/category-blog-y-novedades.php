@@ -81,9 +81,9 @@ get_header(); ?>
     					<?php contributors(); ?>
     				</ul>
 				</div>
-				<?php include('includes/banner-curso-virtual.php'); ?>
-                <?php include('includes/publicaciones.php'); ?>
-                <?php include('includes/tags.php'); ?>
+				<?php echo get_template_part('banner-curso-virtual'); ?>
+				<?php echo get_template_part('publicaciones'); ?>
+				<?php echo get_template_part('tags'); ?>
             </div>
         </div>
 	</div>
