@@ -94,5 +94,15 @@ function get_category_url($category_name){
 function get_category_tag_url($category_name,$tag){
 	return get_category_link(get_cat_ID($category_name)).'?tag='.$tag;
 }
+
+function get_page_permalink_by_title($title){
+	$page = get_page_by_title($title);
+	if($page){
+		return get_permalink($page->ID);
+	}
+	
+	return '#';
+}
+
 // add_action( 'wp_enqueue_scripts', 'wptuts_scripts_basic' );
 ?>

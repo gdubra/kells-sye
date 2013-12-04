@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Acerca-del-programa
+Template Name: evaluaciones-de-impacto
 */
 
 
@@ -17,7 +17,7 @@ get_header(); ?>
     	<div class="ruta">
 			<ul>
             	<li><a href="/">Portada</a></li>
-                <li><a href="">Acerca del Programa</a></li>
+                <li><a href="">Evaluaciones de Impacto del Programa</a></li>
             </ul>
        	</div>
         <div class="titulo"><?php the_title()?></div>

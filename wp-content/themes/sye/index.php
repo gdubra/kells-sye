@@ -125,7 +125,7 @@ get_header(); ?>
 		       	<div class="columna ancho-960">
 		        	<div class="columna ancho-270">
 		            	<?php echo get_template_part('publicaciones'); ?>
-		                <div class="columna ancho-270 arriba-30"><a href="#"><img src="images/banner-aplicacion.jpg" width="270" height="144" alt="Aplicaci&oacute;n para celulares y tabletas - Pol&iacute;ticas e Intervenciones en Seguridad Ciudadana - Buscando y Evaluando Soluciones a los Problemas" title="Aplicaci&oacute;n para celulares y tabletas - Pol&iacute;ticas e Intervenciones en Seguridad Ciudadana - Buscando y Evaluando Soluciones a los Problemas" /></a></div>
+		                <?php echo get_template_part('banner-aplicacion')?>
 		            </div>
 		            
 		       	  	<?php echo get_template_part('video');?>

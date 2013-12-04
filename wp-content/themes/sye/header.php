@@ -66,15 +66,16 @@ $arrMesesCompl 	= array('','Enero','Febrero','Marzo','Abril','Mayo','Junio','Jul
   </div>
 </div>
 <div class="menu">
-  <div class="menu-interno">
-    <ul>
+  
+    <?php wp_nav_menu( array('container'=>'div','container_class'=>'menu-interno', 'theme_location' => 'primary', 'menu_class' => 'sub-menu' ) ); ?>
+    <!-- ul>
       <li class="menu-1"><a href="#">Acerca del programa </a>
         <ul>
-          <li><a href="#">Objetivos y Alcance</a></li>
-          <li><a href="#">Estructura organizacional</a></li>
-          <li><a href="#">Centros de Investigaci&oacute;n Participantes</a></li>
-          <li><a href="#">Otros Gobiernos e Instituciones Adherentes</a></li>
-          <li><a href="#">Anuncios y Agenda</a></li>
+          <li><a href="<?php echo get_page_permalink_by_title('Objetivos y Alcance');?>">Objetivos y Alcance</a></li>
+          <li><a href="<?php echo get_page_permalink_by_title('Estructura organizacional');?>">Estructura organizacional</a></li>
+          <li><a href="<?php echo get_page_permalink_by_title('Centros de Investigación Participantes');?>">Centros de Investigaci&oacute;n Participantes</a></li>
+          <li><a href="<?php echo get_page_permalink_by_title('Otros Gobiernos e Instituciones Adherentes');?>">Otros Gobiernos e Instituciones Adherentes</a></li>
+          <li><a href="<?php echo get_page_permalink_by_title('Anuncios y Agenda');?>">Anuncios y Agenda</a></li>
         </ul>
       </li>
       <li class="menu-2"><a href="#">Evaluaciones de impacto del programa</a>
@@ -97,9 +98,8 @@ $arrMesesCompl 	= array('','Enero','Febrero','Marzo','Abril','Mayo','Junio','Jul
           <li><a href="#">Instituciones y Enlaces Relevantes</a></li>
         </ul>
       </li>
-    </ul>
+    </ul-->
   </div>
-</div>
 			</div>
 		</header><!-- #masthead -->
 
