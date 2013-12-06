@@ -43,16 +43,9 @@ get_header(); ?>
 										    echo "<a href=\"".get_tag_link($tag->term_id)."\">".$tag->name."</a>  / "; 
 										  }
 										}
+							
 										?>
-					                   <div class="compartir">
-										    <div class="addthis_toolbox addthis_default_style">
-										    <a class="addthis_button_facebook"></a>
-										    <a class="addthis_button_twitter"></a>
-										    <a class="addthis_button_print"></a>
-										    <a class="addthis_button_email"></a>
-										    </div>
-										    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-5259e6b615f6ae4a"></script>
-										</div>
+										<?php include('includes/share.php'); ?>
 					              	</div>
 				            	</div>
 				                <div class="blog-nota-interna-texto">
