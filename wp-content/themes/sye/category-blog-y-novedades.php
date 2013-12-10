@@ -18,7 +18,7 @@ get_header(); ?>
 		                    	<div class="blog-nota-imagen">
 		                    		<div class="blog-nota-comentarios">
 		                    			<div class="blog-nota-comentarios-cantidad">
-		                    				<a href="<?php echo the_permalink() ?>"><?php comments_number(0,'%','%'); ?> </a>
+		                    				<a href="<?php echo the_permalink() ?>"><?php comments_number(0,1,'% '); ?> </a>
 		                    			</div>
 		                    		</div>
 		                    		<a href="<?php echo the_permalink('blog-novedades-home-thum') ?>">
