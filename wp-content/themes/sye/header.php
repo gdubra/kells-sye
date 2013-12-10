@@ -66,7 +66,6 @@ $arrMesesCompl 	= array('','Enero','Febrero','Marzo','Abril','Mayo','Junio','Jul
   </div>
 </div>
 <div class="menu">
-  
     <?php wp_nav_menu( array('container'=>'div','container_class'=>'menu-interno', 'theme_location' => 'primary', 'menu_class' => 'sub-menu' ) ); ?>
   </div>
 			</div>
