@@ -32,8 +32,8 @@ get_header(); ?>
 		                            </div>
 		                            <div class="blog-nota-redes">
 		                            	<ul>
-		                                	<li class="twitter"><a href="#" title="Publicar en Twitter"></a></li>
-		                                    <li class="facebook"><a href="#" title="Publicar en Facebook"></a></li>
+		                                	<li class="twitter"><a href="http://www.twitter.com/share?url=<?php echo urlencode(get_permalink()) ?>" title="Publicar en Twitter" target="_blank"></a></li>
+		                                	<li class="facebook"><a href="http://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink()) ?>" title="Publicar en Facebook" target="_blank"></a></li>
 		                                </ul>
 		                            </div>
 		                        </div>

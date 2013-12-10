@@ -1,4 +1,4 @@
-<?php $tags = get_tags(); ?>
+<?php $tags = get_tags(array('hide_empty'=>false)); ?>
 <div class="tags">
     <div class="tags-titulo"><span>Tags de informaci&oacute;n</span></div>
     <div class="tags-listado">

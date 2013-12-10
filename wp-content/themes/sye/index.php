@@ -34,10 +34,18 @@ get_header(); ?>
 		            <div class="destacado">
 		                <div class="flexslider">
 		                    <ul class="slides">
-		                    <?php while ( have_posts() ) : the_post(); ?>
+		                    <?php $blog_novedades_destacadas = home_blog_novedades_destacada_query(); ?>
+		                    <?php while ( $blog_novedades_destacadas->have_posts() ) : $blog_novedades_destacadas->the_post(); ?>
 			        	        <li>
 		                            <a href="<?php echo the_permalink() ?>">
-		                                <?php the_post_thumbnail('home-carrousel-thumb'); ?>
+		                                
+		                            <?php
+		                            $attachment_id = get_field('foto_de_portada');
+		                            $image = wp_get_attachment_image_src( $attachment_id, 'home-carrousel-thumb' );
+		                            
+		                            ?>
+		                            <img src="<?php echo $image[0]; ?>" />
+		                            
 		                                <p class="flex-caption"><span><?php echo the_time('d.m.Y')?></span><br /><?php echo the_title()?></p>
 		                            </a>
 		                        </li>
@@ -71,8 +79,8 @@ get_header(); ?>
 		                            </div>
 		                            <div class="blog-nota-redes">
 		                            	<ul>
-		                                	<li class="twitter"><a href="#" title="Publicar en Twitter"></a></li>
-		                                    <li class="facebook"><a href="#" title="Publicar en Facebook"></a></li>
+		                                	<li class="twitter"><a href="http://www.twitter.com/share?url=<?php echo urlencode(get_permalink()) ?>" target="_blank" title="Publicar en Twitter"></a></li>
+		                                    <li class="facebook"><a href="http://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink()) ?>" target="_blank" title="Publicar en Facebook"></a></li>
 		                                </ul>
 		                            </div>
 		                        </div>

@@ -11,13 +11,36 @@ function wp_setup_theme_hook() {
 	load_theme_textdomain( 'sye', get_template_directory() . '/languages' );
 }
 
+function home_blog_novedades_destacada_query(){
+	
+	$args = array(
+	   'post_type' => 'post',
+	   'category_name' => CATEGORIA_BLOG_NOVEDADES,
+	   'orderby' => 'post_date',
+	   'order' => 'ASC',  
+       'meta_query' =>array(
+			array(
+				'key' => 'destacado',
+			    'value' => true,
+			    'compare' => '=',
+			)
+		));
+	return new WP_Query($args);
+}
+
 function home_blog_novedades_query(){
 	 $args = array(
    	'post_type' => 'post',
 	 'category_name' => CATEGORIA_BLOG_NOVEDADES,
    'orderby' => 'post_date',
-   'order' => 'ASC'  
-   );
+   'order' => 'ASC',
+	 'meta_query' =>array(
+	 array(
+	 				'key' => 'destacado',
+	 			    'value' => true,
+	 			    'compare' => '<>',
+	 )
+	 ));
     return new WP_Query($args);
 }
 
@@ -26,8 +49,15 @@ function home_publicacion_recursos_query(){
 	   	'post_type' => 'post',
 	   	'category_name' => CATEGORIA_PUBLICACIONES_RECURSOS,
 	   'orderby' => 'post_date',
-	   'order' => 'ASC'  
-	);
+		'posts_per_page'=> 1,
+	   'order' => 'ASC',
+	'meta_query' =>array(
+	array(
+		 				'key' => 'destacado',
+		 			    'value' => true,
+		 			    'compare' => '=',
+	)
+	));
 	return new WP_Query($args);
 }
 
@@ -35,8 +65,14 @@ function home_video_query(){
 	$args = array(
 		   	'post_type' => 'video',
 		   	'orderby' => 'post_date',
-		   'order' => 'ASC'  
-	);
+		   'order' => 'ASC',
+	'meta_query' =>array(
+	array(
+			 				'key' => 'destacado',
+			 			    'value' => true,
+			 			    'compare' => '=',
+	)
+	));
 	return new WP_Query($args);
 }
 
@@ -55,8 +91,8 @@ function create_post_type() {
 			),
 		'public' => true,
 		'has_archive' => true,
-		'taxonomies' => array('post_tag','category'),
-	    'supports' => array( 'title', 'editor', 'comments','tags', 'excerpt','post-formats')
+		'taxonomies' => array('post_tag'),
+	    'supports' => array( 'title', 'editor', 'comments','tags', 'excerpt')
 		)
 	);
 	

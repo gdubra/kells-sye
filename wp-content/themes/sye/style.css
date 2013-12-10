@@ -68,7 +68,8 @@ h2 {font-family:'Roboto',sans-serif;font-size:20px;font-weight:bold;color:#6f6f6
 .blog {float:left;width:550px;}
 .blog-titulo {padding:0 0 25px 44px;font-family:'Montserrat',sans-serif;font-size:25px;line-height:25px;color:#3e3e3e;font-weight:bold;text-transform:uppercase;letter-spacing:-1px;background:url(images/fondo-titulo-blog.gif) 0 0 no-repeat;}
 .blog-separador {float:left;width:550px;padding:30px 0;border-top:1px solid #e7e7e7;}
-.blog-nota {float:left;width:260px;}
+.blog-nota {display: inline-block; vertical-align:top; width:260px;}
+.blog-nota:nth-child(2n){margin-left:27px;}
 .blog-nota-imagen {float:left;width:260px;height:195px;border-bottom:2px solid #268787;}
 .blog-nota-comentarios {margin:10px 0 0 10px;padding-bottom:11px;background:url(images/fondo-blog-comentario.gif) right bottom no-repeat;position:absolute;z-index:30;overflow:hidden;}
 .blog-nota-comentarios-cantidad {float:left;font-family:'Montserrat',sans-serif;font-size:14px;}
