@@ -43,29 +43,15 @@ get_header(); ?>
 	                     <a href="<?php echo the_permalink()?>"><?php  echo the_title()?></a>
 	                </div>
             	</div>
-				<div class="galeria-videos">
-				<?php if ( have_posts() ) : ?>
-					<ul>
-					<?php while ( have_posts() ) : the_post(); ?>
-						<li>
-							
-		                    	
-		                    	<a href="<?php echo the_permalink() ?>">
-		                    	<?php echo get_video_thumb(get_the_content()); ?>
-		                    	<br/>
-		                    	<span><?php echo the_time('d.m.Y')?></span><br/>
-		                    	<?php echo the_title();?>
-			                    </a>
-						</li>
-					<?php endwhile; ?>
-					</ul>
-				<?php endif; ?>
-				</div>
-					<?php twentythirteen_paging_nav(); ?>
-			      </div>
-				</div>
-			</div>
-		</div><!-- #content -->
-	</div><!-- #primary -->
+				<div class="columna ancho-550 arriba-30">
+	                <div class="columna ancho-270">
+	                  <div class="boton-azul"><a href="<?php echo get_post_type_archive_link('video');?>">« Volver a la galería de videos</a></div>
+	                </div>
+            	</div>
+	      </div>
+		</div>
+	</div>
+</div><!-- #content -->
+</div><!-- #primary -->
 
 <?php get_footer(); ?>

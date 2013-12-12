@@ -8,6 +8,8 @@
    Version: 0.1
 */
 
+@IMPORT url("../twentythirteen/style.css");
+
 @font-face {
     font-family: "Abel";
     font-style: normal;
@@ -194,6 +196,9 @@ h2 {font-family:'Roboto',sans-serif;font-size:20px;font-weight:bold;color:#6f6f6
 .paginador {float:left;width:100%;margin-top:20px;padding-top:20px;border-top:15px solid #eee;}
 .paginador ul {text-align:center;}
 .paginador li {display:inline;border:1px solid #e0e0e0;line-height:14px;padding:5px 10px;color:#000;margin:0}
+.paginador span {display:inline;border:1px solid #e0e0e0;line-height:14px;padding:5px 10px;color:#000 !important;margin:0}
+.paginador a {display:inline;border:1px solid #e0e0e0;line-height:14px;padding:5px 10px;color:#000;margin:0}
+.page-numbers {color:#5172b7 !important;text-decoration:none;}
 .galeria-fotos li, .galeria-videos li {float:left;width:290px;height:275px;margin:30px 15px 0;font-family:'Roboto Condensed',sans-serif;font-size:15px;line-height:16px;font-weight:bold;}
 .galeria-videos li {float:left;width:270px;height:225px;border:1px solid #ccc;padding:9px;}
 .galeria-fotos li img, .galeria-videos li img {border-bottom:2px solid #268787;margin-bottom:5px;}
@@ -291,7 +296,7 @@ h2 {font-family:'Roboto',sans-serif;font-size:20px;font-weight:bold;color:#6f6f6
 .ancho-960 {width:960px;}
 .arriba-30 {margin-top:30px;}
 .izquierda-20 {margin-left:20px;}
-.izquierda-30 {margin-left:30px;}
+.izquierda-30 {margin-left:26px !important;}
 .izquierda-40 {margin-left:40px;}
 .izquierda-50 {margin-left:50px;}
 .espacio-abajo-0 {padding-bottom:0;}
