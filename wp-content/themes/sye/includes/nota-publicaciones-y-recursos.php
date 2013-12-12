@@ -30,4 +30,14 @@
 
 <div class="blog-nota-titulo"><a href="<?php echo the_permalink() ?>"><?php echo the_title()?></a></div>
 <div class="blog-nota-texto"><?php echo the_excerpt() ?></div>
-<div class="blog-nota-tags"><a href="#">Evaluación de impacto</a> | <a href="#">Violencia</a> | <a href="#">Crimen</a> | <a href="#">Policía</a> | <a href="#">Seguridad latinoamericana</a></div>
+<div class="blog-nota-tags">
+<?php 
+					                	$posttags = get_the_tags();
+										if ($posttags) {
+										  foreach($posttags as $tag) {
+										    echo "<a href=\"".get_tag_link($tag->term_id)."\">".$tag->name."</a>  / "; 
+										  }
+										}
+							
+										?>
+</div>

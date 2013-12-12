@@ -9,7 +9,7 @@ get_header();
             	<li><a href="">Portada</a></li>
             </ul>
        	</div>
-        <div class="titulo">Blog y Novedades</div>
+        <div class="titulo">Publicaciones y recursos</div>
         <div class="columna ancho-960">
         	<div class="interna columna ancho-550 arriba-30">
         		<?php
@@ -37,7 +37,7 @@ get_header();
             <div class="columna ancho-370 izquierda-40 barra">
 				<?php echo get_template_part('banner-curso-virtual'); ?>
 				<?php echo get_template_part('publicaciones'); ?>
-				<?php echo get_template_part('tags'); ?>
+				<?php echo get_template_part('tags-publicaciones-y-recursos'); ?>
             </div>
         </div>
 	</div>
