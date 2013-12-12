@@ -163,5 +163,13 @@ function perfil_usuario_personalizado( $user_contact ) {
 	
 }
 
+function get_video_thumb($url){
+	$patron = '/width="(\d+)"/';
+	$url = preg_replace($patron, 'with="270"', $url);
+	$patron = '/height="(\d+)"/';
+	$url = preg_replace($patron, 'height="152"', $url);
+	return $url;
+}
+
 
 ?>

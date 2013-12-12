@@ -41,7 +41,11 @@ $arrMesesCompl 	= array('','Enero','Febrero','Marzo','Abril','Mayo','Junio','Jul
 <div class="encabezado-barra">
 	<div class="encabezado-barra-interno">
 		<div class="encabezado-fecha"><?=ucfirst(strtolower($arrDiasCompl[date("w")]))?> <?=date("j")?> de <?=ucfirst(strtolower($arrMesesCompl[ceil(date("m"))]))?> de <?=date("Y")?></div>
-        <div class="encabezado-idioma"><a href="#">English</a></div>
+        <?php if($pagename == 'en' ):?>
+            <div class="encabezado-idioma"><a href="/">Español</a></div>
+        <?php else: ?>
+        	<div class="encabezado-idioma"><a href="/en">English</a></div>
+        <?php endif; ?>
       <div class="encabezado-redes">
       	<ul>
         	<li><a href="#" title="Facebook">&nbsp;</a></li>

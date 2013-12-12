@@ -24,7 +24,9 @@ get_header(); ?>
         <div class="columna ancho-960">
             <?php echo get_template_part('banner-titulo-curso-virtual') ?>
             <div class="columna ancho-960 arriba-30">
+            	<div class="columna ancho-675 texto-color-gris-claro texto-16">
 	            <?php the_content() ?>
+	            </div>
 	            <?php echo get_template_part('banner-boton-curso-virtual') ?>
             </div>
         </div>

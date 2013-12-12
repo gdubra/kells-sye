@@ -22,8 +22,9 @@ get_header(); ?>
        	</div>
         <div class="titulo"><?php the_title()?></div>
         <div class="columna ancho-960">
-        	<?php the_content() ?>
-        </div>
+        	<div class="interna columna ancho-550 arriba-30">
+        		<?php the_content() ?>
+        	</div>
             <div class="columna ancho-370 izquierda-40 barra">
 	            <?php  get_template_part('banner-curso-virtual'); ?>	
 	          	<?php  get_template_part('publicaciones'); ?>	

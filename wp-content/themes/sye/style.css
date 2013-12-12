@@ -198,6 +198,7 @@ h2 {font-family:'Roboto',sans-serif;font-size:20px;font-weight:bold;color:#6f6f6
 .galeria-videos li {float:left;width:270px;height:225px;border:1px solid #ccc;padding:9px;}
 .galeria-fotos li img, .galeria-videos li img {border-bottom:2px solid #268787;margin-bottom:5px;}
 .galeria-fotos a, .galeria-videos a  {display:block;}
+.galeria-videos a iframe  {width: 270px;}
 .galeria-fotos a span, .galeria-videos a span {font-family:'Montserrat',sans-serif;font-size:11px;color:#959595;line-height:13px;}
 .galeria-fotos-detalle li {float:left;width:162px;margin:30px 15px 0;}
 .galeria-fotos-detalle li img {border-bottom:2px solid #268787;}

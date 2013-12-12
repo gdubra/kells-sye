@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: evaluaciones-de-impacto
+Template Name: about-the-program
 */
 
 
@@ -14,17 +14,11 @@ get_header(); ?>
 			<?php /* The loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
-    	<div class="ruta">
-			<ul>
-            	<li><a href="/">Portada</a></li>
-                <li><a href="">Evaluaciones de Impacto del Programa</a></li>
-            </ul>
-       	</div>
-        <div class="titulo"><?php the_title()?></div>
+    	<div class="titulo"><?php the_title()?></div>
         <div class="columna ancho-960">
         	<div class="interna columna ancho-550 arriba-30">
         		<?php the_content() ?>
-        	</div>
+            </div>
             <div class="columna ancho-370 izquierda-40 barra">
 	            <?php  get_template_part('banner-curso-virtual'); ?>	
 	          	<?php  get_template_part('publicaciones'); ?>	
@@ -32,9 +26,9 @@ get_header(); ?>
 	          	<?php  get_template_part('presentacion'); ?>	
 	          	<?php  get_template_part('banner-redes-sociales'); ?>
           	</div>
+          </div>
         </div>
 	</div>
-</div>
 
 				<?php comments_template(); ?>
 			<?php endwhile; ?>
