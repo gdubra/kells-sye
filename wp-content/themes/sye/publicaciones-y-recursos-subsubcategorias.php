@@ -10,9 +10,7 @@ get_header();
 
 <div class="contenido">
 	<div class="contenido-interno">
-    	<div class="ruta">
-			<?php get_breadcrumbs() ?>
-        </div>
+    	<?php get_breadcrumbs() ?>
         <div class="titulo"><?php echo $category->cat_name ?></div>
         <div class="columna ancho-960">
         	<div class="interna columna ancho-550 arriba-30">

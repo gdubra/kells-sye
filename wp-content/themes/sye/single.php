@@ -50,7 +50,7 @@ get_header(); ?>
 				            <div class="columna ancho-370 izquierda-40 barra">
 				            	<?php echo get_template_part('banner-curso-virtual'); ?>
 								<?php echo get_template_part('publicaciones'); ?>
-				            	<?php include('includes/presentacion.php'); ?>
+				            	<?php get_template_part('presentacion'); ?>
 				            </div>
         				</div>
 				<?php comments_template(); ?>

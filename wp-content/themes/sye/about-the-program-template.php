@@ -10,7 +10,8 @@ get_header(); ?>
 		<div id="content" class="site-content" role="main">
 				<div class="contenido">
 					<div class="contenido-interno">
-
+			<?php get_breadcrumbs() ?>
+		    
 			<?php /* The loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
@@ -29,8 +30,6 @@ get_header(); ?>
           </div>
         </div>
 	</div>
-
-				<?php comments_template(); ?>
 			<?php endwhile; ?>
 
 		</div><!-- #content -->

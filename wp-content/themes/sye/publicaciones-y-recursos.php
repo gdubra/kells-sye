@@ -10,11 +10,11 @@ get_header(); ?>
 		<div id="content" class="site-content" role="main">
 				<div class="contenido">
 					<div class="contenido-interno">
+			    	<?php get_breadcrumbs() ?>
 
 						<?php /* The loop */ ?>
 						<?php while ( have_posts() ) : the_post(); ?>
 			
-			    	<?php get_breadcrumbs() ?>
 			        <div class="titulo"><?php the_title()?></div>
 			                <?php the_content() ?>
 				    </div>

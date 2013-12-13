@@ -16,6 +16,7 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
 
+		<?php get_breadcrumbs() ?>
 			<?php /* The loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 

@@ -247,9 +247,10 @@ function get_breadcrumbs(){
         elseif ( is_single() )
         {
             $category = get_the_category();
-            $category_id = get_cat_ID( $category[0]->cat_name );
-
-            echo get_category_parents( $category_id, TRUE, "  " );
+            if($category){
+	            $category_id = get_cat_ID( $category[0]->cat_name );
+	            echo get_category_parents( $category_id, TRUE, "  " );
+            }
             echo '<a>'. the_title('','', FALSE).'</a>';
         }
         elseif ( is_page() )

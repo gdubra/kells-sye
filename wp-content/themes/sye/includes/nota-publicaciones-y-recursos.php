@@ -25,7 +25,8 @@
 			</ul>
 	</div>
 </div>
-	<div class="blog-nota-seccion"><a href="#"><?php $categories = get_the_category(); echo $categories[1]->cat_name; 
+    <?php $category = end(get_the_category());?>
+	<div class="blog-nota-seccion"><a href="<?php echo get_category_link($category)?>"><?php  echo $category->cat_name; 
 			?></a></div>
 
 <div class="blog-nota-titulo"><a href="<?php echo the_permalink() ?>"><?php echo the_title()?></a></div>
