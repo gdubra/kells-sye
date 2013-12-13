@@ -109,17 +109,17 @@ function create_post_type() {
 		)
 	);
 	
-	register_post_type( 'Foto',
-		array(
-			'labels' => array(
-				'name' => __( 'Fotos' ),
-				'singular_name' => __( 'Foto' )
-			),
-		'public' => true,
-		'has_archive' => true,
-	    'supports' => array( 'title', 'editor', 'comments', 'excerpt','tags')
-		)
-	);
+//	register_post_type( 'Foto',
+//		array(
+//			'labels' => array(
+//				'name' => __( 'Fotos' ),
+//				'singular_name' => __( 'Foto' )
+//			),
+//		'public' => true,
+//		'has_archive' => true,
+//	    'supports' => array( 'title', 'editor', 'comments', 'excerpt','tags', 'taxonomies')
+//		)
+//	);
 	
 	define('CATEGORIA_BLOG_NOVEDADES', 'Blog y Novedades');
 	define('CATEGORIA_PUBLICACIONES_RECURSOS', 'Publicaciones y Recursos');
