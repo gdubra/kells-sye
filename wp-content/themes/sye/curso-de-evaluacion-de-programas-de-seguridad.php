@@ -14,12 +14,7 @@ get_header(); ?>
 			<?php /* The loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
-    	<div class="ruta">
-			<ul>
-            	<li><a href="/">Portada</a></li>
-                <li><a href="">Evaluaciones de Impacto del Programa</a></li>
-            </ul>
-       	</div>
+    	<?php get_breadcrumbs() ?>
         <div class="titulo"><?php the_title()?></div>
         <div class="columna ancho-960">
             <?php echo get_template_part('banner-titulo-curso-virtual') ?>

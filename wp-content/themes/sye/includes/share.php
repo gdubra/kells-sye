@@ -2,8 +2,8 @@
 <div class="compartir">
 	<div class="addthis_toolbox addthis_default_style">
 		<a  class="addthis_button_facebook"
-			href="<?php echo 'http://www.facebook.com/plugins/share.php?href='.get_permalink($the_post->ID); ?>"></a>
-		<a class="addthis_button_twitter" href="http://twitter.com/share"></a> 
+			href="<?php echo 'http://www.facebook.com/plugins/share.php?href='.urlencode(get_permalink($the_post->ID)); ?>"></a>
+		<a class="addthis_button_twitter" href="http://www.twitter.com/share?url=<?php echo urlencode(get_permalink($the_post->ID)); ?>"></a> 
 		<a class="addthis_button_print" href="javascript:window.print()"></a>
 		<a class="addthis_button_email"></a>
 	</div>

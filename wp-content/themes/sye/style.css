@@ -56,7 +56,8 @@ h2 {font-family:'Roboto',sans-serif;font-size:20px;font-weight:bold;color:#6f6f6
 .contenido-interno {width:960px;display:block;margin:0 auto;font:12px Arial, Helvetica, sans-serif;line-height:16px;color:#333;}
 .separador {float:left;width:960px;padding:30px 0;border-bottom:15px solid #eee;}
 .ruta {float:left;width:960px;}
-.ruta li {float:left;padding:0 21px 0 15px;font-family:'Montserrat',sans-serif;font-size:12px;text-transform:uppercase;line-height:40px;margin-top:10px;color:#353535;background:url(images/fondo-ruta.gif) right center no-repeat;}
+.ruta a {float:left;padding:0 21px 0 15px;font-family:'Montserrat',sans-serif;font-size:12px;text-transform:uppercase;line-height:40px;margin-top:10px;color:#353535;background:url(images/fondo-ruta.gif) right center no-repeat;}
+.ruta a:last-child { background: none !important;}
 .titulo {float:left;width:945px;font-family:'Montserrat',sans-serif;font-size:25px;text-transform:uppercase;font-weight:bold;color:#fff;padding-left:15px;line-height:59px;background:#37b3af url(images/fondo-titulo.gif) right top no-repeat;-moz-border-radius-topleft:5px;-webkit-border-top-left-radius:5px; border-top-left-radius:5px;-moz-border-radius-bottomleft:5px;-webkit-border-bottom-left-radius:5px;border-bottom-left-radius:5px;}
 .subtitulo {float:left;width:930px;ont-family:'Roboto',sans-serif;font-size:20px;font-weight:bold;color:#6f6f6f;line-height:24px;padding:15px;border-bottom:2px dotted #ccc;}
 .destacado {float:left;width:630px;height:425px;padding-left:20px;background:url(images/fondo-destacado.gif) 0 0 no-repeat;}
@@ -273,9 +274,9 @@ h2 {font-family:'Roboto',sans-serif;font-size:20px;font-weight:bold;color:#6f6f6
 .menu li:hover li a {background:none;}
 .menu li ul a {display:block;height:auto;margin:0px;padding:10px 10px 10px 10px;text-align:left;line-height:14px;border:none;border-bottom:1px dotted #6cc5c9;width:304px !important;}	
 .menu li ul a:hover, .menu li ul li:hover a {background:#fff;color:#2a9e9a;text-decoration:none;width:304px !important;}
-.menu li.menu-4 ul {margin-left:-147px;width:380px;}
-.menu li.menu-4 ul a {text-align:right;width:340px !important;}
-.menu li.menu-4 li, .menu li.menu-4 ul a:hover, .menu li.menu-4 ul li:hover a {width:340px !important;}
+.menu li.menu-item:nth-child(4) ul {margin-left:-147px;width:380px;}
+.menu li.menu-item:nth-child(4) ul a {text-align:right;width:340px !important;}
+.menu li.menu-item:nth-child(4) li, .menu li.menu-item:nth-child(4) ul a:hover, .menu li.menu-item:nth-child(4) ul li:hover a {width:340px !important;}
 
 /* pie */
 .pie {float:left;width:100%;display:table;background:#adadad;border-top:5px solid #a5a5a5;padding:40px 0;}

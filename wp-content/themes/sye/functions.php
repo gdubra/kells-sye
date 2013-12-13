@@ -76,6 +76,19 @@ function home_video_query(){
 	return new WP_Query($args);
 }
 
+function subcategoria_documentos_y_publicaciones_de_la_red_query($subsubcategoria){
+	
+	
+	
+	$args = array(
+		   	'post_type' => 'post',
+		   	'category_name' => $subsubcategoria,
+		   'orderby' => 'post_date',
+			'posts_per_page'=> 3,
+		   'order' => 'ASC');
+	return new WP_Query($args);
+}
+
 
 
 /**
@@ -110,6 +123,13 @@ function create_post_type() {
 	
 	define('CATEGORIA_BLOG_NOVEDADES', 'Blog y Novedades');
 	define('CATEGORIA_PUBLICACIONES_RECURSOS', 'Publicaciones y Recursos');
+		define('SUBCATEGORIA_DOCUMENTOS_Y_PUBLICACIONES_DE_LA_RED','Documentos y Publicaciones de La red');
+			define('SUBSUBCATEGORIA_ARTICULOS','Articulos');
+			define('SUBSUBCATEGORIA_DOCUMENTOS_DE_TRABAJO','Documentos de Trabajo');
+			define('SUBSUBCATEGORIA_REVISTAS_GASETILLAS','Revistas – Gasetillas');
+			define('SUBSUBCATEGORIA_OTROS_DOCUMENTOS','Otros documentos');
+		define('SUBCATEGORIA_MATERIAL_DE_CAPACITACION_Y_PRESENTACIONES','Material de capacitacion y presentaciones');
+		define('SUBSUBCATEGORIA_MATERIAL_MULTIMEDIA_DIDACTICO','Material Multimedia Didáctico');
 
 }
 
@@ -138,6 +158,10 @@ function get_page_permalink_by_title($title){
 	}
 	
 	return '#';
+}
+
+function get_category_by_name($name){
+	return get_category(get_cat_ID($category_name));
 }
 
 // add_action( 'wp_enqueue_scripts', 'wptuts_scripts_basic' );
@@ -190,6 +214,70 @@ function get_video_destacado_thumb($url){
 	$patron = '/height="(\d+)"/';
 	$url = preg_replace($patron, 'height="354"', $url);
 	return $url;
+}
+
+function get_breadcrumbs(){
+    global $wp_query;
+
+    if ( !is_home() ){
+
+        // Start the UL
+        echo '<div class="ruta">';
+        // Add the Home link
+        echo '<a href="/">PORTADA</a>';
+
+        if ( is_category() )
+        {
+            $catTitle = single_cat_title( "", false );
+            $cat = get_cat_ID( $catTitle );
+            echo get_category_parents( $cat, TRUE, " " );
+        }
+        elseif ( is_archive() && !is_category() )
+        {
+            echo "<a>  Archives</a>";
+        }
+        elseif ( is_search() ) {
+
+            echo "<a>  Search Results</a>";
+        }
+        elseif ( is_404() )
+        {
+            echo "<a>  404 Not Found</a>";
+        }
+        elseif ( is_single() )
+        {
+            $category = get_the_category();
+            $category_id = get_cat_ID( $category[0]->cat_name );
+
+            echo get_category_parents( $category_id, TRUE, "  " );
+            echo '<a>'. the_title('','', FALSE).'</a>';
+        }
+        elseif ( is_page() )
+        {
+            $post = $wp_query->get_queried_object();
+
+            if ( $post->post_parent == 0 ){
+
+                echo "<a>  ".the_title('','', FALSE)."</a>";
+
+            } else {
+                $title = the_title('','', FALSE);
+                $ancestors = array_reverse( get_post_ancestors( $post->ID ) );
+                array_push($ancestors, $post->ID);
+
+                foreach ( $ancestors as $ancestor ){
+                    if( $ancestor != end($ancestors) ){
+                        echo '<a href="'. get_permalink($ancestor) .'">'. strip_tags( apply_filters( 'single_post_title', get_the_title( $ancestor ) ) ) .'</a>';
+                    } else {
+                        echo strip_tags( apply_filters( 'single_post_title', get_the_title( $ancestor ) ) );
+                    }
+                }
+            }
+        }
+
+        // End the UL
+        echo "</div>";
+    }
 }
 
 

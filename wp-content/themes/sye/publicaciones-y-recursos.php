@@ -14,12 +14,7 @@ get_header(); ?>
 						<?php /* The loop */ ?>
 						<?php while ( have_posts() ) : the_post(); ?>
 			
-			    	<div class="ruta">
-						<ul>
-			            	<li><a href="/">Portada</a></li>
-			                <li><a href="">Publicaciones y Recursos</a></li>
-			            </ul>
-			       	</div>
+			    	<?php get_breadcrumbs() ?>
 			        <div class="titulo"><?php the_title()?></div>
 			                <?php the_content() ?>
 				    </div>

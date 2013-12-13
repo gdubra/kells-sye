@@ -4,11 +4,7 @@ get_header();
 
 <div class="contenido">
 	<div class="contenido-interno">
-    	<div class="ruta">
-			<ul>
-            	<li><a href="">Portada</a></li>
-            </ul>
-       	</div>
+    	<?php get_breadcrumbs() ?>
         <div class="titulo">Publicaciones y recursos</div>
         <div class="columna ancho-960">
         	<div class="interna columna ancho-550 arriba-30">
