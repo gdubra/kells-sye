@@ -3,7 +3,6 @@
 global $wp_query;
 
 $total_pages = $wp_query->max_num_pages;
-
 if ($total_pages > 1){
 
   $current_page = max(1, get_query_var('paged'));
