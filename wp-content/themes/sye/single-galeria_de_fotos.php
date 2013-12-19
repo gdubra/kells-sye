@@ -3,15 +3,11 @@
 include_style('jquery.fancybox');
 include_script('global');
 include_script('jquery.fancybox.pack');
-?>
-<?php global $img_dir; ?> 
-
-
-<?php
-
 $custom_fields = get_post_custom();
-?>
-<?php get_header(); ?>
+ global $img_dir; 
+?> 
+
+
 <script type="text/javascript">
 	$(document).ready(function() {
 		$(".fancybox").fancybox({
@@ -21,22 +17,23 @@ $custom_fields = get_post_custom();
 		});
 	});
 </script>
+<?php get_header(); ?>
 <div id="primary" class="content-area">
 	<div id="content" class="site-content" role="main">
+		<div class="contenido">
+			<div class="contenido-interno">
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-	<div class="contenido">
-		<div class="contenido-interno">
-		    <div class="ruta">
-				<ul>
-		            <li><a href="">Portada</a></li>
+		    	<div class="ruta">
+					<ul>
+		            	<li><a href="">Portada</a></li>
 		                <li><a href="">Publicaciones y Recursos</a></li>
 		                <li><a href="">Galer&iacute;a de fotos</a></li>
-		        </ul>
-		    </div>
-		   	<div class="titulo">fotos</div>
-		    <div class="subtitulo"><?php the_title(); ?></div>
-		    <div class="columna ancho-960">
-			    <div class="galeria-fotos-detalle">
+		        	</ul>
+		    	</div>
+		   		<div class="titulo">fotos</div>
+		    	<div class="subtitulo"><?php the_title(); ?></div>
+		    	<div class="columna ancho-960">
+			    	<div class="galeria-fotos-detalle">
 			            <ul>
 			             <?php
 					        foreach ( $custom_fields["fotos_de_la_galeria"] as $foto ){
@@ -53,11 +50,11 @@ $custom_fields = get_post_custom();
 			    			}
 			    			?>
 			           </ul>
-			    </div>
-		    </div>
-		</div>
-		</div>
+			    	</div>
+		    	</div>
 		<?php endwhile; endif; ?>
+			</div>
+		</div>
 	</div>
 </div>
 <?php get_footer(); ?>

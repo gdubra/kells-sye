@@ -191,11 +191,12 @@ function perfil_usuario_personalizado( $user_contact ) {
 function my_post_queries( $query ) {
   // do not alter the query on wp-admin pages and only alter it if it's the main query
   if (!is_admin() && $query->is_main_query()){
-
-    if(is_category('blog-y-novedades')){
+    if(is_category('blog-y-novedades') ){
       $query->set('posts_per_page', 6);
     }
-
+    if (is_tax('publicaciones_y_recursos')){
+    	$query->set('posts_per_page', 1);
+    }
   }
 }
 add_action( 'pre_get_posts', 'my_post_queries' );
