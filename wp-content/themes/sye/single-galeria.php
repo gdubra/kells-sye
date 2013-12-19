@@ -5,7 +5,6 @@ include_script('global');
 include_script('jquery.fancybox.pack');
 ?>
 <?php global $img_dir; ?> 
-<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
 
 <?php
@@ -24,6 +23,7 @@ $custom_fields = get_post_custom();
 </script>
 <div id="primary" class="content-area">
 	<div id="content" class="site-content" role="main">
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 	<div class="contenido">
 		<div class="contenido-interno">
 		    <div class="ruta">
@@ -57,7 +57,7 @@ $custom_fields = get_post_custom();
 		    </div>
 		</div>
 		</div>
+		<?php endwhile; endif; ?>
 	</div>
 </div>
-		<?php endwhile; endif; ?>
 <?php get_footer(); ?>
