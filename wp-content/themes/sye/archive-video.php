@@ -30,7 +30,10 @@ get_header(); ?>
 	            	<div class="galeria-videos-destacado-video">
 	            		<?php $home_video_query = home_video_query();
                 			  $home_video_query->the_post();
+                			  echo get_the_ID();
+                			  $id_destacado = get_the_ID();
                 			  echo get_video_destacado_thumb(get_the_content());
+	            				
                 	?>
 	            	</div>
 	                <div class="galeria-videos-destacado-titulo">
@@ -39,12 +42,10 @@ get_header(); ?>
 	                </div>
             	</div>
 				<div class="galeria-videos">
-				<?php if ( have_posts() ) : ?>
 					<ul>
-					<?php while ( have_posts() ) : the_post(); ?>
+					<?php while (have_posts() ) : the_post(); ?>
+					<?php if (get_the_ID() != $id_destacado) {?>
 						<li>
-							
-		                    	
 		                    	<a href="<?php echo the_permalink() ?>">
 		                    	<?php echo get_video_thumb(get_the_content()); ?>
 		                    	<br/>
@@ -52,9 +53,9 @@ get_header(); ?>
 		                    	<?php echo the_title();?>
 			                    </a>
 						</li>
+						<?php } ?>
 					<?php endwhile; ?>
 					</ul>
-				<?php endif; ?>
 				</div>
 					<?php twentythirteen_paging_nav(); ?>
 			      </div>

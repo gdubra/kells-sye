@@ -1,4 +1,5 @@
 <?php
+ 
 add_action('after_setup_theme', 'wp_setup_theme_hook');
 function wp_setup_theme_hook() {
 	if(function_exists('add_theme_support')) {
@@ -22,7 +23,7 @@ function home_blog_novedades_destacada_query(){
 			array(
 				'key' => 'destacado',
 			    'value' => true,
-			    'compare' => '=',
+			    'compare' => '='
 			)
 		));
 	return new WP_Query($args);
@@ -31,14 +32,14 @@ function home_blog_novedades_destacada_query(){
 function home_blog_novedades_query(){
 	 $args = array(
    	'post_type' => 'post',
-	 'category_name' => CATEGORIA_BLOG_NOVEDADES,
-   'orderby' => 'post_date',
-   'order' => 'ASC',
-	 'meta_query' =>array(
+	'category_name' => CATEGORIA_BLOG_NOVEDADES,
+    'orderby' => 'post_date',
+    'order' => 'ASC',
+	'meta_query' =>array(
 	 array(
 	 				'key' => 'destacado',
-	 			    'value' => true,
-	 			    'compare' => '<>',
+	 			    'value' => TRUE,
+	 			    'compare' => '!='
 	 )
 	 ));
     return new WP_Query($args);
@@ -65,16 +66,18 @@ function home_video_query(){
 	$args = array(
 		   	'post_type' => 'video',
 		   	'orderby' => 'post_date',
-		   'order' => 'ASC',
+		   'order' => 'DESC',
+	'posts_per_page' => 1,
 	'meta_query' =>array(
 	array(
 			 				'key' => 'destacado',
 			 			    'value' => true,
-			 			    'compare' => '=',
+			 			    'compare' => '='
 	)
 	));
 	return new WP_Query($args);
 }
+
 
 function subcategoria_documentos_y_publicaciones_de_la_red_query($subsubcategoria){
 	

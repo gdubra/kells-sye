@@ -58,9 +58,11 @@ get_header(); ?>
 		       <div class="separador espacio-abajo-0">
 		       		<div class="blog">
 		            	<div class="blog-titulo">Blog y novedades</div>
-		                <div class="blog-separador">
 		                    <?php $blog_novedades = home_blog_novedades_query() ?>
-		                    <?php while ( $blog_novedades->have_posts() ) : $blog_novedades->the_post(); ?>
+		                    <?php $counter = 1;  while ( $blog_novedades->have_posts() ) : $blog_novedades->the_post(); ?>
+		                	<?php if ($counter % 2  != 0 ) {?> 
+ 							<div class="blog-separador">
+ 							<?php } ?>
 		                	<div class="blog-nota">
 		                    	<div class="blog-nota-imagen">
 		                    		<div class="blog-nota-comentarios">
@@ -86,9 +88,14 @@ get_header(); ?>
 		                        </div>
 		                        <div class="blog-nota-titulo"><a href="<?php echo the_permalink() ?>"><?php echo the_title()?></a></div>
 		                        <div class="blog-nota-texto"><?php echo the_excerpt() ?></div>
-		                    </div>               
-		                    <?php endwhile; ?>
-						</div>
+		                    </div>  
+		                      <?php if ($counter % 2  == 0 ) {?> 
+								</div>         
+		                     <?php } $counter++;?>     
+		                    <?php endwhile;  ?>
+		                    <?php if ($counter % 2  == 0 ) {?> 
+ 								</div>
+ 							<?php }; ?>
 		            </div>
 		       		<div class="programas">
 		            	<div class="programas-titulo">Programas a evaluar</div>

@@ -25,7 +25,7 @@
 			</ul>
 	</div>
 </div>
-    <?php $category = end(get_the_category());?>
+    <?php $categories = get_the_category(); $category = $categories[1];?>
 	<div class="blog-nota-seccion"><a href="<?php echo get_category_link($category)?>"><?php  echo $category->cat_name; 
 			?></a></div>
 
