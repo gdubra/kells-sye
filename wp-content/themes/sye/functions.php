@@ -230,11 +230,9 @@ function get_vimeo_thumb_medium($id) {
 
 function get_vimeo_thumb_large($id) {
 	$data = file_get_contents("http://vimeo.com/api/v2/video/$id.json");
-	if(data === false){
-		return "";
-	}
 	$data = json_decode($data);
-	return $data[0]->thumbnail_large;
+	$data = $data[0];
+	return $data['thumbnail_large'];
 }
 
 function get_youtube_thumb_large($id){
