@@ -4,4 +4,7 @@ jQuery(document).ready(function() {
 		animationSpeed: 600,
 		directionNav: false
     });
+	
+	
+	
 });
