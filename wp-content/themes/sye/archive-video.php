@@ -30,11 +30,11 @@ get_header(); ?>
 	            	<div class="galeria-videos-destacado-video">
 	            		<?php $home_video_query = home_video_query();
                 			  $home_video_query->the_post();
-                			  echo get_the_ID();
                 			  $id_destacado = get_the_ID();
-                			  echo get_video_destacado_thumb(get_the_content());
-	            				
+                			  $video_id = get_post_meta($id_destacado, 'video_id', true);
+                			  $fuente = get_post_meta($id_destacado, 'fuente', true);
                 	?>
+                	<?php echo get_video_frame($video_id,$fuente);?>
 	            	</div>
 	                <div class="galeria-videos-destacado-titulo">
 		                <span><?php echo the_time('d.m.Y')?></span><br />
@@ -47,7 +47,12 @@ get_header(); ?>
 					<?php if (get_the_ID() != $id_destacado) {?>
 						<li>
 		                    	<a href="<?php echo the_permalink() ?>">
-		                    	<?php echo get_video_thumb(get_the_content()); ?>
+		                    	<?php 
+		                    	$id_destacado = get_the_ID();
+		                    	$video_id = get_post_meta($id_destacado, 'video_id', true);
+		                    	$fuente = get_post_meta($id_destacado, 'fuente', true);
+		                    	?>
+		                    	<img src="<?php echo get_video_thumb($video_id,$fuente);?>" width="270" height="152">
 		                    	<br/>
 		                    	<span><?php echo the_time('d.m.Y')?></span><br/>
 		                    	<?php echo the_title();?>

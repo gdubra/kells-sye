@@ -99,18 +99,7 @@ function subcategoria_documentos_y_publicaciones_de_la_red_query($subsubcategori
  */
 add_action( 'init', 'create_post_type' );
 function create_post_type() {
-	register_post_type( 'Video',
-		array(
-			'labels' => array(
-				'name' => __( 'Videos' ),
-				'singular_name' => __( 'Video' )
-			),
-		'public' => true,
-		'has_archive' => true,
-		'taxonomies' => array('post_tag'),
-	    'supports' => array( 'title', 'editor', 'comments','tags', 'excerpt')
-		)
-	);
+	
 	
 //	register_post_type( 'Foto',
 //		array(
@@ -203,13 +192,7 @@ function my_post_queries( $query ) {
 }
 add_action( 'pre_get_posts', 'my_post_queries' );
 
-function get_video_thumb($url){
-$patron = '/width="(\d+)"/';
-	$url = preg_replace($patron, 'width="270"', $url);
-	$patron = '/height="(\d+)"/';
-	$url = preg_replace($patron, 'height="152"', $url);
-	return $url;
-}
+
 
 function get_video_destacado_thumb($url){
 	$patron = '/width="(\d+)"/';
@@ -217,6 +200,45 @@ function get_video_destacado_thumb($url){
 	$patron = '/height="(\d+)"/';
 	$url = preg_replace($patron, 'height="354"', $url);
 	return $url;
+}
+
+function get_video_thumb($id,$fuente){
+	
+	return call_user_func("get_{$fuente}_thumb_large",$id);
+}
+
+function get_video_frame($id,$fuente){
+	return call_user_func("get_{$fuente}_video_frame",$id);
+}
+
+function get_youtube_video_frame($id){
+	return "<iframe width=\"630\" height=\"374\" src=\"//www.youtube.com/embed/{$id}\" frameborder=\"0\" allowfullscreen></iframe>";
+}
+
+function get_vimeo_video_frame($id){
+	return "<iframe src=\"//player.vimeo.com/video/{$id}\" width=\"630\" height=\"374\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>";
+}
+
+function get_vimeo_thumb_medium($id) {
+    $data = file_get_contents("http://vimeo.com/api/v2/video/$id.json");
+    if(data === false){
+    	return "";
+    }
+    $data = json_decode($data);
+    return $data[0]->thumbnail_medium;
+}
+
+function get_vimeo_thumb_large($id) {
+	$data = file_get_contents("http://vimeo.com/api/v2/video/$id.json");
+	if(data === false){
+		return "";
+	}
+	$data = json_decode($data);
+	return $data[0]->thumbnail_large;
+}
+
+function get_youtube_thumb_large($id){
+	return "http://img.youtube.com/vi/$id/0.jpg";
 }
 
 function get_breadcrumbs(){

@@ -28,10 +28,12 @@ get_header(); ?>
 			<div class="columna ancho-960">
 				<div class="galeria-videos-destacado">
 	            	<div class="galeria-videos-destacado-video">
-	            		<?php $home_video_query = home_video_query();
-                			  $home_video_query->the_post();
-                			  echo get_video_destacado_thumb(get_the_content());
+	            		<?php 
+                			  $id = get_the_ID();
+                			  $video_id = get_post_meta($id, 'video_id', true);
+                			  $fuente = get_post_meta($id, 'fuente', true);
                 	?>
+                	<?php echo get_video_frame($video_id,$fuente);?>
 	            	</div>
 	                <div class="galeria-videos-destacado-titulo">
 		                <span><?php echo the_time('d.m.Y')?></span><br />
