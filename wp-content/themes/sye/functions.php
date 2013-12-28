@@ -82,10 +82,10 @@ function home_video_query(){
 function subcategoria_documentos_y_publicaciones_de_la_red_query($subsubcategoria){
 	
 	
-	
+	$cat_id = get_cat_ID($subsubcategoria);
 	$args = array(
 		   	'post_type' => 'post',
-		   	'category_name' => $subsubcategoria,
+		   	'cat' => $cat_id,
 		   'orderby' => 'post_date',
 			'posts_per_page'=> 3,
 		   'order' => 'ASC');
@@ -99,18 +99,7 @@ function subcategoria_documentos_y_publicaciones_de_la_red_query($subsubcategori
  */
 add_action( 'init', 'create_post_type' );
 function create_post_type() {
-	register_post_type( 'Video',
-		array(
-			'labels' => array(
-				'name' => __( 'Videos' ),
-				'singular_name' => __( 'Video' )
-			),
-		'public' => true,
-		'has_archive' => true,
-		'taxonomies' => array('post_tag'),
-	    'supports' => array( 'title', 'editor', 'comments','tags', 'excerpt')
-		)
-	);
+	
 	
 //	register_post_type( 'Foto',
 //		array(
@@ -164,7 +153,7 @@ function get_page_permalink_by_title($title){
 }
 
 function get_category_by_name($name){
-	return get_category(get_cat_ID($category_name));
+	return get_category(get_cat_ID($name));
 }
 
 // add_action( 'wp_enqueue_scripts', 'wptuts_scripts_basic' );
@@ -190,7 +179,6 @@ function perfil_usuario_personalizado( $user_contact ) {
 	
 }
 	
-	
 function my_post_queries( $query ) {
   // do not alter the query on wp-admin pages and only alter it if it's the main query
   if (!is_admin() && $query->is_main_query()){
@@ -204,13 +192,7 @@ function my_post_queries( $query ) {
 }
 add_action( 'pre_get_posts', 'my_post_queries' );
 
-function get_video_thumb($url){
-$patron = '/width="(\d+)"/';
-	$url = preg_replace($patron, 'width="270"', $url);
-	$patron = '/height="(\d+)"/';
-	$url = preg_replace($patron, 'height="152"', $url);
-	return $url;
-}
+
 
 function get_video_destacado_thumb($url){
 	$patron = '/width="(\d+)"/';
@@ -218,6 +200,58 @@ function get_video_destacado_thumb($url){
 	$patron = '/height="(\d+)"/';
 	$url = preg_replace($patron, 'height="354"', $url);
 	return $url;
+}
+
+function get_video_thumb($id,$fuente){
+	return call_user_func("get_{$fuente}_thumb_large",$id);
+}
+
+function get_video_frame($id,$fuente){
+	return call_user_func("get_{$fuente}_video_frame",$id);
+}
+
+function get_video_home_frame($id,$fuente){
+	return call_user_func("get_{$fuente}_video_home_frame",$id);
+	
+}
+
+function get_youtube_video_home_frame($id){
+	return "<iframe width=\"430\" height=\"242\" src=\"//www.youtube.com/embed/{$id}\" frameborder=\"0\" allowfullscreen></iframe>";
+}
+
+function get_vimeo_video_home_frame($id){
+	return "<iframe src=\"//player.vimeo.com/video/{$id}\" width=\"430\" height=\"242\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>";
+}
+
+function get_youtube_video_frame($id){
+	return "<iframe width=\"630\" height=\"374\" src=\"//www.youtube.com/embed/{$id}\" frameborder=\"0\" allowfullscreen></iframe>";
+}
+
+function get_vimeo_video_frame($id){
+	return "<iframe src=\"//player.vimeo.com/video/{$id}\" width=\"630\" height=\"374\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>";
+}
+
+function get_vimeo_thumb_medium($id) {
+    $data = file_get_contents("http://vimeo.com/api/v2/video/$id.json");
+    if(data === false){
+    	return "";
+    }
+    $data = json_decode($data);
+    return $data[0]->thumbnail_medium;
+}
+
+function get_vimeo_thumb_large($id) {
+	$data = file_get_contents("http://vimeo.com/api/v2/video/$id.json");
+	if(data === false){
+		return "";
+	}
+	$data = json_decode($data);
+	$data = $data[0];
+	return $data->thumbnail_large;
+}
+
+function get_youtube_thumb_large($id){
+	return "http://img.youtube.com/vi/$id/0.jpg";
 }
 
 function get_breadcrumbs(){
@@ -255,7 +289,6 @@ function get_breadcrumbs(){
 	            $category_id = get_cat_ID( $category[0]->cat_name );
 	            echo get_category_parents( $category_id, TRUE, "  " );
             }
-            echo '<a>'. the_title('','', FALSE).'</a>';
         }
         elseif ( is_page() )
         {
@@ -263,7 +296,7 @@ function get_breadcrumbs(){
 
             if ( $post->post_parent == 0 ){
 
-                echo "<a>  ".the_title('','', FALSE)."</a>";
+                
 
             } else {
                 $title = the_title('','', FALSE);
@@ -284,6 +317,7 @@ function get_breadcrumbs(){
         echo "</div>";
     }
 }
+
 
 
 ?>

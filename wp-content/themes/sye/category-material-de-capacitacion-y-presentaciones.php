@@ -15,7 +15,7 @@ $category =  $wp_query->get_queried_object();
         	  <h2>En esta secci&oacute;n se encuentran el listado de Documentos de Trabajo, Art&iacute;culos, una Revista &ndash;  Gacetillas,  y otros documentos publicados en el marco o por miembros del Sistema Regional  de Evaluaci&oacute;n.</h2>
         	</div>
             <div class="columna ancho-370 izquierda-40 barra">
-				<?php echo get_template_part('banner-aplicacion'); ?>
+				<?php echo get_template_part('banner-applicacion-large'); ?>
             </div>
         </div>
         <?php echo get_template_part('publicaciones-y-recursos-subcategorias')?>

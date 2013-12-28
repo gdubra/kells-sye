@@ -17,13 +17,14 @@
 get_header(); ?>
 
 <head>
+<script src="//connect.facebook.net/en_US/all.js"></script>
 <?php 
 	include_style('flexslider');
 	include_script('global');
 	include_script('jquery.flexslider-min');
 	include_script('index');
+	include_script('facebook_util');
 ?>
-
 </head>
 
 	<div id="primary" class="content-area">
@@ -81,8 +82,10 @@ get_header(); ?>
 		                            </div>
 		                            <div class="blog-nota-redes">
 		                            	<ul>
-		                                	<li class="twitter"><a href="http://www.twitter.com/share?url=<?php echo urlencode(get_permalink()) ?>" target="_blank" title="Publicar en Twitter"></a></li>
-		                                    <li class="facebook"><a href="http://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink()) ?>" target="_blank" title="Publicar en Facebook"></a></li>
+		                                	<li class="twitter"><a href="http://www.twitter.com/share?url=<?php echo urlencode(get_permalink()) ?>&text=<?php echo the_title() ?>" target="_blank" title="Publicar en Twitter"></a></li>
+		                                    <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID) )?>
+		                                    <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID) )?>
+		                                    <li class="facebook"><a onclick="share_facebook('<?php echo get_permalink() ?>','<?php echo $image[0] ?>','<?php echo the_title()?>','<?php echo get_the_excerpt()?>' )" title="Publicar en Facebook"></a></li>
 		                                </ul>
 		                            </div>
 		                        </div>

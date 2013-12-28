@@ -1,9 +1,15 @@
+<head>
+<script src="//connect.facebook.net/en_US/all.js"></script>
+<?php include_script('facebook_util');?>
+</head>
 
 <div class="compartir">
 	<div class="addthis_toolbox addthis_default_style">
+		<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID) )?>
+		                                    <a title="Publicar en Facebook"></a>
 		<a  class="addthis_button_facebook"
-			href="<?php echo 'http://www.facebook.com/plugins/share.php?href='.urlencode(get_permalink($the_post->ID)); ?>"></a>
-		<a class="addthis_button_twitter" href="http://www.twitter.com/share?url=<?php echo urlencode(get_permalink($the_post->ID)); ?>"></a> 
+			 onclick="share_facebook('<?php echo get_permalink() ?>','<?php echo $image[0] ?>','<?php echo the_title()?>','<?php echo get_the_excerpt()?>' )"></a>
+		<a class="addthis_button_twitter" href="http://www.twitter.com/share?url=<?php echo urlencode(get_permalink($the_post->ID)); ?>&text=<?php echo the_title() ?>"></a> 
 		<a class="addthis_button_print" href="javascript:window.print()"></a>
 		<a class="addthis_button_email"></a>
 	</div>

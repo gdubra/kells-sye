@@ -56,7 +56,7 @@ $arrMesesCompl 	= array('','Enero','Febrero','Marzo','Abril','Mayo','Junio','Jul
       </div>
       <div class="encabezado-buscador">
       	<form>
-        	<input name="buscador" type="text" />
+      	 <?php get_search_form()?>
         </form>
       </div>
       <div class="encabezado-contacto"><a href="contacto.php">Contacto</a></div>

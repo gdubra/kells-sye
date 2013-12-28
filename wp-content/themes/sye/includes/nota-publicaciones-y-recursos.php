@@ -1,3 +1,7 @@
+<head>
+<script src="//connect.facebook.net/en_US/all.js"></script>
+<?php include_script('facebook_util');?>
+</head>
 
 <div class="blog-nota-imagen">
 	<div class="blog-nota-comentarios">
@@ -15,13 +19,11 @@
 	<div class="blog-nota-redes">
 			<ul>
 				<li class="twitter">
-					<a href="http://www.twitter.com/share?url=<?php echo urlencode(get_permalink()) ?>"
+					<a href="http://www.twitter.com/share?url=<?php echo urlencode(get_permalink()) ?>&text=<?php echo the_title() ?>"
 					title="Publicar en Twitter" target="_blank"></a>
 				</li>
-				<li class="facebook">
-					<a href="http://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink()) ?>"
-					title="Publicar en Facebook" target="_blank"></a>
-				</li>
+				<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID) )?>
+		                                    <li class="facebook"><a onclick="share_facebook('<?php echo get_permalink() ?>','<?php echo $image[0] ?>','<?php echo the_title()?>','<?php echo get_the_excerpt()?>' )" title="Publicar en Facebook"></a></li>
 			</ul>
 	</div>
 </div>
