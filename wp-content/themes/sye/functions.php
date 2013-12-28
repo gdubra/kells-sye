@@ -203,12 +203,24 @@ function get_video_destacado_thumb($url){
 }
 
 function get_video_thumb($id,$fuente){
-	
 	return call_user_func("get_{$fuente}_thumb_large",$id);
 }
 
 function get_video_frame($id,$fuente){
 	return call_user_func("get_{$fuente}_video_frame",$id);
+}
+
+function get_video_home_frame($id,$fuente){
+	return call_user_func("get_{$fuente}_video_home_frame",$id);
+	
+}
+
+function get_youtube_video_home_frame($id){
+	return "<iframe width=\"430\" height=\"242\" src=\"//www.youtube.com/embed/{$id}\" frameborder=\"0\" allowfullscreen></iframe>";
+}
+
+function get_vimeo_video_home_frame($id){
+	return "<iframe src=\"//player.vimeo.com/video/{$id}\" width=\"430\" height=\"242\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>";
 }
 
 function get_youtube_video_frame($id){
@@ -230,9 +242,12 @@ function get_vimeo_thumb_medium($id) {
 
 function get_vimeo_thumb_large($id) {
 	$data = file_get_contents("http://vimeo.com/api/v2/video/$id.json");
+	if(data === false){
+		return "";
+	}
 	$data = json_decode($data);
 	$data = $data[0];
-	return $data['thumbnail_large'];
+	return $data->thumbnail_large;
 }
 
 function get_youtube_thumb_large($id){

@@ -30,10 +30,12 @@ get_header(); ?>
 	            	<div class="galeria-videos-destacado-video">
 	            		<?php 
                 			  $id = get_the_ID();
-                			  $video_id = get_post_meta($id, 'video_id', true);
-                			  $fuente = get_post_meta($id, 'fuente', true);
-                	?>
-                	<?php echo get_video_frame($video_id,$fuente);?>
+                			  if($id){
+	                			  $video_id = get_post_meta($id, 'video_id', true);
+	                			  $fuente = get_post_meta($id, 'fuente', true);
+	                	 		  echo get_video_frame($video_id,$fuente);
+                			  }
+                	 	?>
 	            	</div>
 	                <div class="galeria-videos-destacado-titulo">
 		                <span><?php echo the_time('d.m.Y')?></span><br />
