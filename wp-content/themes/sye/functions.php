@@ -186,7 +186,7 @@ function my_post_queries( $query ) {
       $query->set('posts_per_page', 6);
     }
     if (is_tax('publicaciones_y_recursos')){
-    	$query->set('posts_per_page', 1);
+    	$query->set('posts_per_page', 9);
     }
   }
 }
