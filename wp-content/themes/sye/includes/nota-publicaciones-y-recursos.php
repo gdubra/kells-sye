@@ -14,7 +14,9 @@
 <div class="blog-nota-arriba">
 	<div class="blog-nota-datos">
 		<div class="blog-nota-fecha"><?php echo the_time('d.m.Y')?></div>
+		<?php if (get_the_author() != 'admin' ) {?>
 		<div class="blog-nota-autor">Por: <?php the_author_posts_link() ?></div>
+		<?php }?>
 	</div>
 	<div class="blog-nota-redes">
 			<ul>

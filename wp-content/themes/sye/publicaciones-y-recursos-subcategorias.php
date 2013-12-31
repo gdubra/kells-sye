@@ -31,8 +31,9 @@
                         <div class="blog-nota-arriba">
                         	<div class="blog-nota-datos">
                             	<div class="blog-nota-fecha"><?php echo the_time('d.m.Y')?></div>
-                                <div class="blog-nota-autor">Por: <?php the_author_posts_link() ?></div>
-                            </div>
+								<?php if (get_the_author() != 'admin' ) {?>
+								<div class="blog-nota-autor">Por: <?php the_author_posts_link() ?></div>
+								<?php }?>                            </div>
                             <div class="blog-nota-redes">
                             	<ul>
                                 	<li class="twitter"><a href="http://www.twitter.com/share?url=<?php echo urlencode(get_permalink()) ?>&text=<?php echo the_title() ?>" target="_blank" title="Publicar en Twitter"></a></li>

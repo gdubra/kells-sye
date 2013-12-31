@@ -20,7 +20,9 @@ get_header(); ?>
         					<div class="interna columna ancho-550 arriba-30 blog-nota-interna">
 				            	<div class="blog-nota-interna-arriba">
 				                	<div class="blog-nota-interna-fecha"><?php echo the_time('d.m.Y')?></div>
-				                    <div class="blog-nota-interna-autor">Por: <span><?php the_author_posts_link() ?></span></div>
+				                	<?php if (get_the_author() != 'admin' ) {?>
+										<div class="blog-nota-interna-autor">Por: <span><?php the_author_posts_link() ?></span></div>
+									<?php }?>
 				                    <div class="blog-nota-interna-comentarios">
 				                    	<div class="blog-nota-interna-comentarios-cantidad">
 					                    	<a href="<?php echo the_permalink() ?>"><?php comments_number(0, 1, '% '); ?> </a>
@@ -53,10 +55,10 @@ get_header(); ?>
 				            	<?php get_template_part('presentacion'); ?>
 				            </div>
         				</div>
-				<?php comments_template(); ?>
 
 			<?php endwhile; ?>
 
+	<?php comments_template(); ?>
 		</div><!-- #content -->
 	</div><!-- #primary -->
 
