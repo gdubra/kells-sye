@@ -10,7 +10,7 @@ get_header(); ?>
 		<div id="content" class="site-content" role="main">
 				<div class="contenido">
 					<div class="contenido-interno">
-			    	<?php get_breadcrumbs() ?>
+			    	<?php get_breadcrumbs('Publicaciones y Recursos') ?>
 
 						<?php /* The loop */ ?>
 						<?php while ( have_posts() ) : the_post(); ?>
