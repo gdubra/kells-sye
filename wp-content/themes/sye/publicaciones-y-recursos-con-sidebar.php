@@ -14,7 +14,7 @@ get_header(); ?>
 						<?php /* The loop */ ?>
 						<?php while ( have_posts() ) : the_post(); ?>
 			
-				    	<?php get_breadcrumbs() ?>
+				    	<?php get_breadcrumbs('Publicaciones y Recursos') ?>
 				        <div class="titulo"><?php the_title()?></div>
 				        <div class="columna ancho-960">
 					        <div class="interna columna ancho-550 arriba-30">
