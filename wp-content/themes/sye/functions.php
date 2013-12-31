@@ -160,8 +160,16 @@ function get_category_by_name($name){
 
 function contributors() {
 	global $wpdb;
+	 foreach ( (array) $wpdb->get_results("SELECT DISTINCT post_author, COUNT(ID) AS count FROM $wpdb->posts WHERE post_type = 'post' AND " 
+	 	. get_private_posts_cap_sql( 'post' ) . " GROUP BY post_author") as $row )
+			$author_count[$row->post_author] = $row->count;
+			
 	$authors = $wpdb->get_results("SELECT ID, user_nicename from $wpdb->users WHERE display_name <> 'admin' ORDER BY display_name");
 	foreach($authors as $author) {
+	 	$posts = isset( $author_count[$author->ID] ) ? $author_count[$author->ID] : 0;
+		if ( !$posts) {
+			continue;
+		}
 		echo "<li><a href=\"".get_bloginfo('url')."/?author=";
 		echo $author->ID;
 		echo "\">";
