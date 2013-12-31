@@ -18,7 +18,7 @@ function home_blog_novedades_destacada_query(){
 	   'post_type' => 'post',
 	   'category_name' => CATEGORIA_BLOG_NOVEDADES,
 	   'orderby' => 'post_date',
-	   'order' => 'ASC',  
+	   'order' => 'DESC',  
        'meta_query' =>array(
 			array(
 				'key' => 'destacado',
@@ -34,7 +34,7 @@ function home_blog_novedades_query(){
    	'post_type' => 'post',
 	'category_name' => CATEGORIA_BLOG_NOVEDADES,
     'orderby' => 'post_date',
-    'order' => 'ASC',
+    'order' => 'DESC',
 	'meta_query' =>array(
 	 array(
 	 				'key' => 'destacado',
@@ -51,7 +51,7 @@ function home_publicacion_recursos_query(){
 	   	'category_name' => CATEGORIA_PUBLICACIONES_RECURSOS,
 	   'orderby' => 'post_date',
 		'posts_per_page'=> 1,
-	   'order' => 'ASC',
+	   'order' => 'DESC',
 	'meta_query' =>array(
 	array(
 		 				'key' => 'destacado',
@@ -88,7 +88,7 @@ function subcategoria_documentos_y_publicaciones_de_la_red_query($subsubcategori
 		   	'cat' => $cat_id,
 		   'orderby' => 'post_date',
 			'posts_per_page'=> 3,
-		   'order' => 'ASC');
+		   'order' => 'DESC');
 	return new WP_Query($args);
 }
 
@@ -100,19 +100,7 @@ function subcategoria_documentos_y_publicaciones_de_la_red_query($subsubcategori
 add_action( 'init', 'create_post_type' );
 function create_post_type() {
 	
-	
-//	register_post_type( 'Foto',
-//		array(
-//			'labels' => array(
-//				'name' => __( 'Fotos' ),
-//				'singular_name' => __( 'Foto' )
-//			),
-//		'public' => true,
-//		'has_archive' => true,
-//	    'supports' => array( 'title', 'editor', 'comments', 'excerpt','tags', 'taxonomies')
-//		)
-//	);
-	
+
 	define('CATEGORIA_BLOG_NOVEDADES', 'Blog y Novedades');
 	define('CATEGORIA_PUBLICACIONES_RECURSOS', 'Publicaciones y Recursos');
 		define('SUBCATEGORIA_DOCUMENTOS_Y_PUBLICACIONES_DE_LA_RED','Documentos y Publicaciones de La red');
@@ -194,14 +182,6 @@ add_action( 'pre_get_posts', 'my_post_queries' );
 
 
 
-function get_video_destacado_thumb($url){
-	$patron = '/width="(\d+)"/';
-	$url = preg_replace($patron, 'width="630"', $url);
-	$patron = '/height="(\d+)"/';
-	$url = preg_replace($patron, 'height="354"', $url);
-	return $url;
-}
-
 function get_video_thumb($id,$fuente){
 	return call_user_func("get_{$fuente}_thumb_large",$id);
 }
@@ -231,15 +211,6 @@ function get_vimeo_video_frame($id){
 	return "<iframe src=\"//player.vimeo.com/video/{$id}\" width=\"630\" height=\"374\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>";
 }
 
-function get_vimeo_thumb_medium($id) {
-    $data = file_get_contents("http://vimeo.com/api/v2/video/$id.json");
-    if(data === false){
-    	return "";
-    }
-    $data = json_decode($data);
-    return $data[0]->thumbnail_medium;
-}
-
 function get_vimeo_thumb_large($id) {
 	$data = file_get_contents("http://vimeo.com/api/v2/video/$id.json");
 	if(data === false){
@@ -254,7 +225,7 @@ function get_youtube_thumb_large($id){
 	return "http://img.youtube.com/vi/$id/0.jpg";
 }
 
-function get_breadcrumbs(){
+function get_breadcrumbs($page_parent=false){
     global $wp_query;
 
     if ( !is_home() ){
@@ -268,19 +239,9 @@ function get_breadcrumbs(){
         {
             $catTitle = single_cat_title( "", false );
             $cat = get_cat_ID( $catTitle );
-            echo get_category_parents( $cat, TRUE, " " );
-        }
-        elseif ( is_archive() && !is_category() )
-        {
-            echo "<a>  Archives</a>";
-        }
-        elseif ( is_search() ) {
-
-            echo "<a>  Search Results</a>";
-        }
-        elseif ( is_404() )
-        {
-            echo "<a>  404 Not Found</a>";
+            $category = get_category($cat);
+            if($category->category_parent !=0)
+            	echo get_category_parents( $category->category_parent, TRUE, " " );
         }
         elseif ( is_single() )
         {
@@ -294,9 +255,11 @@ function get_breadcrumbs(){
         {
             $post = $wp_query->get_queried_object();
 
-            if ( $post->post_parent == 0 ){
-
-                
+            if ( $post->post_parent == 0  ){
+                if($page_parent != FALSE){
+                	echo "<a>{$page_parent}</a>";
+                }
+              
 
             } else {
                 $title = the_title('','', FALSE);
