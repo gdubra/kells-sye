@@ -24,7 +24,7 @@ get_header(); ?>
 			<div class="contenido">
 			<div class="contenido-interno">
 				<?php get_breadcrumbs() ?>
-			<div class="titulo">Galer&iacute;a de videos</div>
+			<div class="titulo">Video</div>
 			<div class="columna ancho-960">
 				<div class="galeria-videos-destacado">
 	            	<div class="galeria-videos-destacado-video">

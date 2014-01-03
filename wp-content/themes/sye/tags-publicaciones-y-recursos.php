@@ -5,7 +5,7 @@
       <ul>
             <?php foreach ($tags as $tag):?>
             <li>
-				<a href='?tag=<?php echo $tag->slug ?>' title='<?php echo $tag->name?>'><?php echo $tag->name?></a>
+				<a href='<?php echo get_category_tag_url( CATEGORIA_PUBLICACIONES_RECURSOS ,$tag->slug); ?>' title='<?php echo $tag->name?>'><?php echo $tag->name?></a>
 			</li>
             <?php  endforeach;?>
         </ul>

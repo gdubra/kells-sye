@@ -59,7 +59,7 @@ $arrMesesCompl 	= array('','Enero','Febrero','Marzo','Abril','Mayo','Junio','Jul
       	 <?php get_search_form()?>
         </form>
       </div>
-      <div class="encabezado-contacto"><a href="contacto.php">Contacto</a></div>
+      <div class="encabezado-contacto"><a href="/contacto">Contacto</a></div>
   </div>
 </div>
 <div class="encabezado">

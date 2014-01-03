@@ -106,7 +106,7 @@ function create_post_type() {
 		define('SUBCATEGORIA_DOCUMENTOS_Y_PUBLICACIONES_DE_LA_RED','Documentos y Publicaciones de La red');
 			define('SUBSUBCATEGORIA_ARTICULOS','Articulos');
 			define('SUBSUBCATEGORIA_DOCUMENTOS_DE_TRABAJO','Documentos de Trabajo');
-			define('SUBSUBCATEGORIA_REVISTAS_GASETILLAS','Revistas – Gasetillas');
+			define('SUBSUBCATEGORIA_REVISTAS_GACETILLAS','Revistas – Gacetillas');
 			define('SUBSUBCATEGORIA_OTROS_DOCUMENTOS','Otros documentos');
 		define('SUBCATEGORIA_MATERIAL_DE_CAPACITACION_Y_PRESENTACIONES','Material de capacitacion y presentaciones');
 		define('SUBSUBCATEGORIA_MATERIAL_MULTIMEDIA_DIDACTICO','Material Multimedia Didáctico');

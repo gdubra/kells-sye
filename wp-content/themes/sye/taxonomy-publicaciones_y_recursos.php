@@ -10,12 +10,7 @@ global $tpl_dir, $img_dir;
 	<div id="content" class="site-content" role="main">
 		<div class="contenido">
 		  <div class="contenido-interno">
-		    	<div class="ruta">
-					<ul>
-		            	<li><a href="">Portada</a></li>
-		                <li><a href="">Publicaciones y Recursos</a></li>
-		            </ul>
-		       	</div>
+		    	<?php get_breadcrumbs() ?>
 		        <div class="titulo">Galer&iacute;a de fotos</div>
 		        <div class="columna ancho-960">
 		        	<div class="galeria-fotos">

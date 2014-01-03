@@ -13,6 +13,7 @@ get_header(); ?>
 		<div id="content" class="site-content" role="main">
 		<div class="contenido search-page">
 		<div class="contenido-interno">
+		<div class="titulo">Resultados para: <?php echo get_query_var('s')?></div>
 		<div class="separador">
 		<?php if ( have_posts() ) : ?>
 
@@ -49,6 +50,8 @@ get_header(); ?>
 		                        <div class="blog-nota-texto"><?php echo the_excerpt() ?></div>
 		                    </div>  
 			<?php endwhile; ?>
+			<?php elseif(!have_posts()) :?>
+				<p>No se han encontrado resultados para tu búsqueda </p>
 			<?php endif?>
 			</div>
 			</div>

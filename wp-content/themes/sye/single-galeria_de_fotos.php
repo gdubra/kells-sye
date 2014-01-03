@@ -22,14 +22,8 @@ $custom_fields = get_post_custom();
 	<div id="content" class="site-content" role="main">
 		<div class="contenido">
 			<div class="contenido-interno">
+		    	<?php get_breadcrumbs() ?>
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-		    	<div class="ruta">
-					<ul>
-		            	<li><a href="">Portada</a></li>
-		                <li><a href="">Publicaciones y Recursos</a></li>
-		                <li><a href="">Galer&iacute;a de fotos</a></li>
-		        	</ul>
-		    	</div>
 		   		<div class="titulo">fotos</div>
 		    	<div class="subtitulo"><?php the_title(); ?></div>
 		    	<div class="columna ancho-960">
