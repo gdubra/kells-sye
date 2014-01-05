@@ -185,6 +185,10 @@ function my_post_queries( $query ) {
     if (is_tax('publicaciones_y_recursos')){
     	$query->set('posts_per_page', 9);
     }
+    
+    if($query->is_search){
+    	$query->set('post_type','post');
+    }
   }
 }
 add_action( 'pre_get_posts', 'my_post_queries' );
@@ -234,7 +238,7 @@ function get_youtube_thumb_large($id){
 	return "http://img.youtube.com/vi/$id/0.jpg";
 }
 
-function get_breadcrumbs($page_parent=false){
+function get_breadcrumbs($page_parent=false,$page_parent_url=false){
     global $wp_query;
 
     if ( !is_home() ){
@@ -258,7 +262,9 @@ function get_breadcrumbs($page_parent=false){
             	//echo '<a href="'.get_term_link("galeria-de-fotos-", "publicaciones_y_recursos").'">Galeria de fotos</a>';
             	echo '<a href="/publicaciones-y-recursos/">Publicaciones y Recursos </a><a href="'.get_term_link("galeria-de-fotos", "publicaciones_y_recursos").'">Galeria de fotos</a>';
             	
-        	} else {
+        	}else if(get_post_type() == 'video'){
+        		echo '<a href="/publicaciones-y-recursos/">Publicaciones y Recursos </a><a href="'.get_post_type_archive_link('video').'">Galeria de Videos</a>';
+        	}else {
 	            $category = get_the_category();
 	            if($category){
 		            $category_id = get_cat_ID( $category[0]->cat_name );
@@ -291,6 +297,8 @@ function get_breadcrumbs($page_parent=false){
             }
         } else if (is_tax('publicaciones_y_recursos')){
         	echo '<a href="/publicaciones-y-recursos/">Publicaciones y Recursos</a>';
+        }else if($page_parent != false){
+        	echo $page_parent_url != false ? "<a href=\"{$page_parent_url}\">{$page_parent}</a>" : "<a>{$page_parent}</a>";  
         } 
 
         // End the UL

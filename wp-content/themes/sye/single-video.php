@@ -23,7 +23,7 @@ get_header(); ?>
 		<div id="content" class="site-content" role="main">
 			<div class="contenido">
 			<div class="contenido-interno">
-				<?php get_breadcrumbs() ?>
+				<?php get_breadcrumbs('Publicaciones y Recursos',get_category_url(CATEGORIA_PUBLICACIONES_RECURSOS)) ?>
 			<div class="titulo">Video</div>
 			<div class="columna ancho-960">
 				<div class="galeria-videos-destacado">
