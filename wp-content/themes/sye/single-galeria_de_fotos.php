@@ -22,7 +22,13 @@ $custom_fields = get_post_custom();
 	<div id="content" class="site-content" role="main">
 		<div class="contenido">
 			<div class="contenido-interno">
-		    	<?php get_breadcrumbs() ?>
+		    	<?php 
+		    		echo '<div class="ruta">';
+		        // Add the Home link
+        			echo '<a href="/">PORTADA</a>';
+		    		echo '<a href="/publicaciones-y-recursos/">Publicaciones y Recursos </a><a href="'.get_term_link("galeria-de-fotos", "publicaciones_y_recursos").'">Galeria de fotos</a>';
+		    		echo '</div>'
+		    	?>
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 		   		<div class="titulo">fotos</div>
 		    	<div class="subtitulo"><?php the_title(); ?></div>

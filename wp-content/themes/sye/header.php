@@ -48,10 +48,10 @@ $arrMesesCompl 	= array('','Enero','Febrero','Marzo','Abril','Mayo','Junio','Jul
         <?php endif; ?>
       <div class="encabezado-redes">
       	<ul>
-        	<li><a href="#" title="Facebook">&nbsp;</a></li>
-            <li class="twitter"><a href="#" title="Twitter">&nbsp;</a></li>
-            <li class="linkedin"><a href="#" title="LinkedIn">&nbsp;</a></li>
-            <li class="youtube"><a href="#" title="YouTube">&nbsp;</a></li>
+        	<li><a href="https://www.facebook.com/people/Seguridad-Evaluacion/100007070616414" title="Facebook">&nbsp;</a></li>
+            <li class="twitter"><a href="https://twitter.com/SegyEvaluacion" title="Twitter">&nbsp;</a></li>
+            <li class="linkedin"><a href="http://ar.linkedin.com/pub/seguridad-y-evaluacion/85/9b4/43a" title="LinkedIn">&nbsp;</a></li>
+            <li class="youtube"><a href="http://www.youtube.com/channel/UCgxLAeFd2D9IqjBPjCe9QFA" title="YouTube">&nbsp;</a></li>
         </ul>
       </div>
       <div class="encabezado-buscador">

@@ -34,6 +34,7 @@ function home_blog_novedades_query(){
    	'post_type' => 'post',
 	'category_name' => CATEGORIA_BLOG_NOVEDADES,
     'orderby' => 'post_date',
+	'posts_per_page'=> 4,
     'order' => 'DESC',
 	'meta_query' =>array(
 	 array(
@@ -253,11 +254,17 @@ function get_breadcrumbs($page_parent=false){
         }
         elseif ( is_single() )
         {
-            $category = get_the_category();
-            if($category){
-	            $category_id = get_cat_ID( $category[0]->cat_name );
-	            echo get_category_parents( $category_id, TRUE, "  " );
-            }
+        	if (is_single("galeria_de_fotos")) {
+            	//echo '<a href="'.get_term_link("galeria-de-fotos-", "publicaciones_y_recursos").'">Galeria de fotos</a>';
+            	echo '<a href="/publicaciones-y-recursos/">Publicaciones y Recursos </a><a href="'.get_term_link("galeria-de-fotos", "publicaciones_y_recursos").'">Galeria de fotos</a>';
+            	
+        	} else {
+	            $category = get_the_category();
+	            if($category){
+		            $category_id = get_cat_ID( $category[0]->cat_name );
+		            echo get_category_parents( $category_id, TRUE, "  " );
+	            }
+        	}
         }
         elseif ( is_page() )
         {
@@ -282,7 +289,9 @@ function get_breadcrumbs($page_parent=false){
                     }
                 }
             }
-        }
+        } else if (is_tax('publicaciones_y_recursos')){
+        	echo '<a href="/publicaciones-y-recursos/">Publicaciones y Recursos</a>';
+        } 
 
         // End the UL
         echo "</div>";

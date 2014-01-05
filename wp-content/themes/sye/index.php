@@ -106,22 +106,22 @@ get_header(); ?>
 		            	<div class="programas-titulo">Programas a evaluar</div>
 		                <div class="programas-paises">
 		                	<ul>
-		                    	<li class="colombia"><a href="#"><strong>Bogot&aacute;, Colombia</strong>  <br />
+		                    	<li class="colombia"><a href="/programas-a-evaluar/#colombia"><strong>Bogot&aacute;, Colombia</strong>  <br />
 		                   	    Camad</a></li>
-		                        <li class="el-salvador izquierda-20"><a href="#"><strong>El Salvador  </strong><br />
+		                        <li class="el-salvador izquierda-20"><a href="/programas-a-evaluar/#elsalvador"><strong>El Salvador  </strong><br />
 		                        Granjas Penitenciarias</a></li>
-		                    	<li class="chile"><a href="#"><strong>Chile</strong><br />
+		                    	<li class="chile"><a href="/programas-a-evaluar/#chile"><strong>Chile</strong><br />
 		                   	    Sistema T&aacute;ctico <br />
 		                   	    de  An&aacute;lisis Delictual</a></li>
-		                        <li class="honduras izquierda-20"><a href="#"><strong>Honduras</strong><br />
+		                        <li class="honduras izquierda-20"><a href="/programas-a-evaluar/#honduras"><strong>Honduras</strong><br />
 		                        Municipios <br />
 		                        mas  Seguros</a></li>
-		                    	<li class="argentina"><a href="#"><strong>C&oacute;rdoba, Argentina</strong><br />
+		                    	<li class="argentina"><a href="/programas-a-evaluar/#argentina"><strong>C&oacute;rdoba, Argentina</strong><br />
 		Sistema de Alarmas  Comunitarias</a></li>
-		                        <li class="uruguay izquierda-20"><a href="#"><strong>Uruguay  </strong><br />
+		                        <li class="uruguay izquierda-20"><a href="/programas-a-evaluar/#uruguay"><strong>Uruguay  </strong><br />
 		                        Gesti&oacute;n Integrada Local<br />
 		en Seguridad Ciudadana</a></li>
-		                    	<li class="costa-rica"><a href="#"><strong>Costa Rica  </strong><br />
+		                    	<li class="costa-rica"><a href="/programas-a-evaluar/#costarica"><strong>Costa Rica  </strong><br />
 		                   	    Casas de Justicia</a></li>
 		                    </ul>
 		                </div>
@@ -129,13 +129,13 @@ get_header(); ?>
 		                <div class="equipos">
 		                	<div class="equipos-titulo">Equipos de evaluaci&oacute;n participantes</div>
 		                    <div class="equipos-listado">
-		                    	<ul><li><a href="#">Instituto de Sociolog&iacute;a de la Universidad Cat&oacute;lica  de Chile, Gesti&oacute;n &amp; Prevenci&oacute;n Consultora y la Corporaci&oacute;n Viviendo de Colombia</a></li>
-		                            <li><a href="#">Transcrime/CEAMOS - Joint Research Centre on  Transnational Crime</a></li>
-		                            <li><a href="#">Departamento de Estad&iacute;stica de la Universidad  de Concepci&oacute;n </a></li>
-		                            <li><a href="#">London &amp;  Econometrica Consulting Group,  M&eacute;xico</a></li>
-		                            <li><a href="#">Fundaci&oacute;n Paz Ciudadana de Chile</a></li>
-		                            <li><a href="#">Observatorio del Desarrollo de la Universidad  de Costa Rica y University of Cambridge </a></li>
-		                            <li><a href="#">School of Economics and Finance Queen Mary,  University of London</a></li>
+		                    	<ul><li><a href="http://seguridadyevaluacion.org/acerca-del-programa/centros-de-investigacion-participantes/">Instituto de Sociolog&iacute;a de la Universidad Cat&oacute;lica  de Chile, Gesti&oacute;n &amp; Prevenci&oacute;n Consultora y la Corporaci&oacute;n Viviendo de Colombia</a></li>
+		                            <li><a href="http://seguridadyevaluacion.org/acerca-del-programa/centros-de-investigacion-participantes/">Transcrime/CEAMOS - Joint Research Centre on  Transnational Crime</a></li>
+		                            <li><a href="http://seguridadyevaluacion.org/acerca-del-programa/centros-de-investigacion-participantes/">Departamento de Estad&iacute;stica de la Universidad  de Concepci&oacute;n </a></li>
+		                            <li><a href="http://seguridadyevaluacion.org/acerca-del-programa/centros-de-investigacion-participantes/">London &amp;  Econometrica Consulting Group,  M&eacute;xico</a></li>
+		                            <li><a href="http://seguridadyevaluacion.org/acerca-del-programa/centros-de-investigacion-participantes/">Fundaci&oacute;n Paz Ciudadana de Chile</a></li>
+		                            <li><a href="http://seguridadyevaluacion.org/acerca-del-programa/centros-de-investigacion-participantes/">Observatorio del Desarrollo de la Universidad  de Costa Rica y University of Cambridge </a></li>
+		                            <li><a href="http://seguridadyevaluacion.org/acerca-del-programa/centros-de-investigacion-participantes/">School of Economics and Finance Queen Mary,  University of London</a></li>
 		                        </ul>
 		                    </div>
 		                </div>
