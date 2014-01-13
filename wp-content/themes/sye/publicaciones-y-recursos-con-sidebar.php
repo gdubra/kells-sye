@@ -21,7 +21,6 @@ get_header(); ?>
 					                <?php the_content() ?>
 					         </div>
 				            <div class="columna ancho-370 izquierda-40 barra">
-								<?php echo get_template_part('banner-aplicacion'); ?>
 								<?php echo get_template_part('banner-curso-virtual'); ?>
 				                <?php echo get_template_part('publicaciones'); ?>
 				                <?php echo get_template_part('tags'); ?>

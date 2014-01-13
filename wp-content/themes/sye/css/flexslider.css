@@ -41,7 +41,7 @@ html[xmlns] .slides {display: block;}
 .flex-container {zoom: 1; position: relative;}
 
 /* Caption style */
-.flex-caption {width: 428px;height:108px; padding: 15px 50px 0 0; position: absolute; left: 0; top:282px; color: #5172b7; font-size:24px; line-height: 25px;font-family:'Roboto',sans-serif;background:url(../images/fondo-destacado-texto.png) 0 0 no-repeat;text-align:left;font-weight:bold;letter-spacing:-1px;}
+.flex-caption {width: 428px;height:116px; padding: 7px 50px 0 0; position: absolute; left: 0; top:282px; color: #5172b7; font-size:24px; line-height: 25px;font-family:'Roboto',sans-serif;background:url(../images/fondo-destacado-texto.png) 0 0 no-repeat;text-align:left;font-weight:bold;letter-spacing:-1px;}
 .flex-caption a {color:#5172b7}
 .flex-caption span {font-family:'Montserrat',sans-serif;color:#959595;font-size:12px;line-height: 18px;}
 

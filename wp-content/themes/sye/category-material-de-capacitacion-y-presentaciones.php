@@ -12,7 +12,7 @@ $category =  $wp_query->get_queried_object();
         <div class="titulo"><?php echo $category->cat_name?></div>
         <div class="columna ancho-960">
         	<div class="interna columna ancho-550 arriba-30">
-        	  <h2>En esta secci&oacute;n se encuentran el listado de Documentos de Trabajo, Art&iacute;culos, una Revista &ndash;  Gacetillas,  y otros documentos publicados en el marco o por miembros del Sistema Regional  de Evaluaci&oacute;n.</h2>
+        	  <h2>En esta sección se encuentran el listado de Publicaciones  del Material Multimedia Didáctico,  Presentaciones y  Capacitación.</h2>
         	</div>
             <div class="columna ancho-370 izquierda-40 barra">
 				<?php echo get_template_part('banner-applicacion-large'); ?>

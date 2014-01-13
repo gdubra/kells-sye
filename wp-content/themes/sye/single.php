@@ -41,13 +41,14 @@ get_header(); ?>
 										  }
 										}
 							
-										?>
-										<?php include('includes/share.php'); ?>
+										?>										
 					              	</div>
+                                    <?php include('includes/share.php'); ?>
 				            	</div>
 				                <div class="blog-nota-interna-texto">
 				                  	<?php the_content(); ?>
 				                </div>
+                                <?php comments_template(); ?>
 				            </div>
 				            <div class="columna ancho-370 izquierda-40 barra">
 				            	<?php echo get_template_part('banner-curso-virtual'); ?>
@@ -58,7 +59,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-	<?php comments_template(); ?>
+	
 		</div><!-- #content -->
 	</div><!-- #primary -->
 

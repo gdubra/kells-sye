@@ -14,9 +14,7 @@
  * @since Twenty Thirteen 1.0
  */
 
-get_header(); ?>
-
-<head>
+get_header(); ?><head>
 <script src="//connect.facebook.net/en_US/all.js"></script>
 <?php 
 	include_style('flexslider');
@@ -27,7 +25,9 @@ get_header(); ?>
 ?>
 </head>
 
-	<div id="primary" class="content-area">
+	
+
+<div id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
 		<div class="contenido">
 			<div class="contenido-interno">
@@ -133,7 +133,7 @@ get_header(); ?>
 		                            <li><a href="http://seguridadyevaluacion.org/acerca-del-programa/centros-de-investigacion-participantes/">Transcrime/CEAMOS - Joint Research Centre on  Transnational Crime</a></li>
 		                            <li><a href="http://seguridadyevaluacion.org/acerca-del-programa/centros-de-investigacion-participantes/">Departamento de Estad&iacute;stica de la Universidad  de Concepci&oacute;n </a></li>
 		                            <li><a href="http://seguridadyevaluacion.org/acerca-del-programa/centros-de-investigacion-participantes/">London &amp;  Econometrica Consulting Group,  M&eacute;xico</a></li>
-		                            <li><a href="http://seguridadyevaluacion.org/acerca-del-programa/centros-de-investigacion-participantes/">Fundaci&oacute;n Paz Ciudadana de Chile</a></li>
+		                            <!--li><a href="http://seguridadyevaluacion.org/acerca-del-programa/centros-de-investigacion-participantes/">Fundaci&oacute;n Paz Ciudadana de Chile</a></li-->
 		                            <li><a href="http://seguridadyevaluacion.org/acerca-del-programa/centros-de-investigacion-participantes/">Observatorio del Desarrollo de la Universidad  de Costa Rica y University of Cambridge </a></li>
 		                            <li><a href="http://seguridadyevaluacion.org/acerca-del-programa/centros-de-investigacion-participantes/">School of Economics and Finance Queen Mary,  University of London</a></li>
 		                        </ul>

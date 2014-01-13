@@ -1,21 +1,20 @@
 <?php
 get_header(); 
 ?>
-
+<?php
+$curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
+?>
 <div class="contenido">
 	<div class="contenido-interno">
     	<?php get_breadcrumbs() ?>
-        <div class="titulo">Blog y Novedades</div>
+        <div class="titulo">Autor: <?php echo get_the_author_meta("display_name", $curauth->ID); ?></div>
         <div class="columna ancho-960">
         	<div class="interna columna ancho-550 arriba-30">
-	        	<?php
-	    			$curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
-	    		?>
-	    		<h2>Autor: <?php echo get_avatar($curauth->ID, 61,the_author_meta('display_name', $curauth->ID)); ?></h2>
+	    		<!--h2>Autor: <?php echo get_avatar($curauth->ID, 61,the_author_meta('display_name', $curauth->ID)); ?></h2>
     			<dl>
 			        <dt>Profesión</dt>
 			        <dd><?php echo get_the_author_meta("profesion", $curauth->ID); ?></dd>
-			    </dl>
+			    </dl-->
     				
         		<?php
         			$counter = 1; 

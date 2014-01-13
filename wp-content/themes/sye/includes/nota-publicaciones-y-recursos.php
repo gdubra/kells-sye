@@ -1,7 +1,5 @@
-<head>
 <script src="//connect.facebook.net/en_US/all.js"></script>
 <?php include_script('facebook_util');?>
-</head>
 
 <div class="blog-nota-imagen">
 	<div class="blog-nota-comentarios">

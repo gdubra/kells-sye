@@ -1,8 +1,5 @@
-<head>
 <script src="//connect.facebook.net/en_US/all.js"></script>
 <?php include_script('facebook_util');?>
-</head>
-
 <div class="compartir">
 	<div class="addthis_toolbox addthis_default_style">
 		<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID) )?>

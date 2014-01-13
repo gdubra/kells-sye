@@ -15,6 +15,7 @@
 		<div class="pie">
 			<div class="pie-interno">
 		        <div class="pie-logos"><a href="index.php"  alt="Seguridad y Evaluaci&oacute;n - Sistema Regional de Evaluaci&oacute;n de Impacto en Pol&iacute;ticas de Seguridad Ciudadana" title="Seguridad y Evaluaci&oacute;n - Sistema Regional de Evaluaci&oacute;n de Impacto en Pol&iacute;ticas de Seguridad Ciudadana"></a></div>
+                <div class="pie-email">Consultar o comentarios: <strong><a href="mailto:info@seguridadyevaluacion.org">info@seguridadyevaluacion.org</a></strong></div>
 		        <div class="pie-kells"><a href="http://www.kells.com.ar" target="_blank" alt="Kells" title="Kells"></a></div>
 		    </div>
 		</div>

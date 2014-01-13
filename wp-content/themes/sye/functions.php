@@ -1,4 +1,10 @@
 <?php
+
+
+function wp_hide_update() {     
+        remove_action( 'admin_notices', 'update_nag', 3 );
+    }
+add_action('admin_menu','wp_hide_update');
  
 add_action('after_setup_theme', 'wp_setup_theme_hook');
 function wp_setup_theme_hook() {

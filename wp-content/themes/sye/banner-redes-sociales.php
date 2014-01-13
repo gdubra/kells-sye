@@ -3,10 +3,10 @@
     <div class="redes-subtitulo">en las redes sociales</div>
     <div class="redes-iconos">
       	<ul>
-        	<li><a href="#" title="Facebook">&nbsp;</a></li>
-            <li class="twitter"><a href="#" title="Twitter">&nbsp;</a></li>
-            <li class="linkedin"><a href="#" title="LinkedIn">&nbsp;</a></li>
-            <li class="youtube"><a href="#" title="YouTube">&nbsp;</a></li>
+        	<li><a href="https://www.facebook.com/seguridad.evaluacion" title="Facebook" target="_blank">&nbsp;</a></li>
+            <li class="twitter"><a href="https://twitter.com/SegyEvaluacion" title="Twitter" target="_blank">&nbsp;</a></li>
+            <li class="linkedin"><a href="http://ar.linkedin.com/pub/seguridad-y-evaluacion/85/9b4/43a" title="LinkedIn" target="_blank">&nbsp;</a></li>
+            <li class="youtube"><a href="http://www.youtube.com/channel/UCgxLAeFd2D9IqjBPjCe9QFA" title="YouTube" target="_blank">&nbsp;</a></li>
         </ul>
     </div>
 </div>

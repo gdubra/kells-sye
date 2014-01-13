@@ -1,7 +1,7 @@
 			<div class="video">
             	<div class="video-arriba">
                 	<div class="video-titulo">Video</div>
-                    <div class="video-link"><a href="#">Ver m&aacute;s</a></div>
+                    <div class="video-link"><a href="/video">Ver m&aacute;s</a></div>
                 </div>
                 <div class="video-player">
                 	<?php $home_video_query = home_video_query();
