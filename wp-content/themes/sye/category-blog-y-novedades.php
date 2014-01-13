@@ -5,7 +5,8 @@ get_header();
 <div class="contenido">
 	<div class="contenido-interno">
     	<?php get_breadcrumbs() ?>
-        <div class="titulo">Blog y Novedades</div>
+    	
+        <div class="titulo"><?php echo  is_tag()? get_query_var('tag'): 'Blog y Novedades' ?></div>
         <div class="columna ancho-960">
         	<div class="interna columna ancho-550 arriba-30">
         		<?php

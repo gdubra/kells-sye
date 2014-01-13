@@ -261,6 +261,10 @@ function get_breadcrumbs($page_parent=false,$page_parent_url=false){
             $category = get_category($cat);
             if($category->category_parent !=0)
             	echo get_category_parents( $category->category_parent, TRUE, " " );
+            
+            if(is_tag()){
+            	echo '<a>tags</a>';
+            }
         }
         elseif ( is_single() )
         {

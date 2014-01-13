@@ -243,7 +243,7 @@ h2 p {margin:0;}
 .encabezado-contacto a, .encabezado-idioma a {display:block;padding:0 20px;color:#5172b7;}
 .encabezado-contacto a:hover, .encabezado-idioma a:hover {background:#5172b7;color:#fff;}
 .encabezado-buscador {float:right;border-right:1px solid #d7d7d7;height:28px;padding:8px 20px; line-height:28px;}
-.encabezado-buscador input[type=search] {border: 1px solid #E5E5E5;color: #37B3AF;font: bold 12px Arial,Helvetica,sans-serif;height:30px;padding: 5px 30px 5px 5px;width: 170px;float:left;line-height:28px;}
+.encabezado-buscador input[type=search] {border: 1px solid #E5E5E5;color: #37B3AF;font: bold 12px Arial,Helvetica,sans-serif;height:18px;padding: 5px 30px 5px 5px;width: 170px;float:left;line-height:28px;}
 .encabezado-buscador input[type=button] {background: url("images/fondo-buscador.gif") no-repeat scroll 7px center #FFFFFF;border: 1px solid #E5E5E5;color: #37B3AF;font: bold 12px Arial,Helvetica,sans-serif;height: 30px;width: 31px;padding: 0px;float:left;margin-left:5px;}
 .screen-reader-text {color: #37B3AF;font: bold 12px Arial,Helvetica,sans-serif;line-height:28px;}
 .encabezado-redes {float:right;border-right:1px solid #d7d7d7;padding:9px 15px 9px 20px;height:26px;}
